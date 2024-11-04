@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Siamo - Autolavaggio Sperandio Andrea</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-gradient {
+            background: linear-gradient(to bottom, #18181b, #000000);
+        }
+        .carousel-image {
+            transition: opacity 0.5s ease-in-out;
+        }
+        .menu-content {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .menu-content.open {
+            transform: translateX(0);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+            
+        }
+        .price-color {
+            color: #ff0000;
+      
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+        .animate-slide-up {
+            animation: slideUp 0.5s ease-out;
+          
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient text-white">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm border-b border-white border-opacity-10">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="flex items-center gap-3">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Lavaggio%20Sofndo%20Bianco-989SB9sXjKH2p5MAyZGX7JsRPZWlrj.png" alt="Sperandio Andrea Car Wash" class="w-auto h-12">
+                    <span class="text-lg font-semibold hidden sm:inline-block">
+                        Autolavaggio Sperandio Andrea
+                    </span>
+                </a>
+                <button id="menuToggle" class="text-white p-2">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                    <span class="sr-only">Menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-y-0 right-0 w-[300px] bg-black border-l border-white border-opacity-10 z-50 menu-content">
+        <nav class="flex flex-col">
+            <a href="/prenota" class="w-full bg-white text-black px-6 py-3 font-medium hover:bg-gray-200 transition-colors">Prenota Ora</a>
+            <a href="/servizi" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Servizi</a>
+            <a href="/chi-siamo" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Chi Siamo</a>
+            <a href="/contatti" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Contatti</a>
+            <a href="/gallery" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Photogallery</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <section class="py-24 md:py-32 animate-fade-in">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-6xl font-bold text-center mb-16 animate-slide-up">Chi Siamo</h1>
+                
+                <div class="mb-16 animate-slide-up" style="animation-delay: 0.3s;">
+                    <div class="bg-gray-100 rounded-lg shadow-xl overflow-hidden">
+                        <div class="p-8 md:p-12">
+                            <div class="max-w-3xl mx-auto">
+                                <p class="text-gray-800 mb-6 text-lg leading-relaxed">
+                                    Con oltre 30 anni di esperienza nel settore della pulizia e del detailing per veicoli, il nostro autolavaggio si distingue per qualità e attenzione al cliente. Dalla nostra prima sede in via Forte Marghera (ex TNT Traco), abbiamo fatto della cura dell'auto una vera e propria missione, evolvendoci per offrire un servizio che va oltre le aspettative.
+                                </p>
+                                <p class="text-gray-800 mb-6 text-lg leading-relaxed">
+                                    Utilizziamo solo i migliori prodotti del marchio Kimicar, garanzia di eccellenza nell'industria, per trattare ogni veicolo con precisione e dedizione. Il nostro obiettivo è sempre stato uno solo: restituire ai clienti la soddisfazione di vedere la propria auto tornare come nuova, grazie a un livello di detailing che non lascia nulla al caso.
+                                </p>
+                                <p class="text-gray-800 text-lg leading-relaxed price-color font-semibold">
+                                    Siamo qui per valorizzare ogni dettaglio, al servizio della tua auto e della tua soddisfazione.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative aspect-[16/9] w-full overflow-hidden rounded-lg shadow-xl animate-slide-up" style="animation-delay: 0.4s;">
+                    <img src="/placeholder.svg?height=600&width=1200" alt="Carousel Image 1" class="carousel-image absolute inset-0 w-full h-full object-cover">
+                    <img src="/placeholder.svg?height=600&width=1200" alt="Carousel Image 2" class="carousel-image absolute inset-0 w-full h-full object-cover opacity-0">
+                    <img src="/placeholder.svg?height=600&width=1200" alt="Carousel Image 3" class="carousel-image absolute inset-0 w-full h-full object-cover opacity-0">
+                    <button id="prevSlide" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full transition-opacity hover:bg-opacity-70">
+                        <i data-lucide="chevron-left" class="h-6 w-6"></i>
+                    </button>
+                    <button id="nextSlide" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full transition-opacity hover:bg-opacity-70">
+                        <i data-lucide="chevron-right" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white border-opacity-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Collegamenti Rapidi</h3>
+                    <nav class="flex flex-col space-y-2">
+                        <a href="/prenota" class="text-white text-opacity-80 hover:text-opacity-100 transition-colors">Prenota Ora</a>
+                        <a href="/servizi" class="text-white text-opacity-80 hover:text-opacity-100 transition-colors">Servizi</a>
+                        <a href="/chi-siamo" class="text-white text-opacity-80 hover:text-opacity-100 transition-colors">Chi Siamo</a>
+                        <a href="/contatti" class="text-white text-opacity-80 hover:text-opacity-100 transition-colors">Contatti</a>
+                        <a href="/gallery" class="text-white text-opacity-80 hover:text-opacity-100 transition-colors">Photogallery</a>
+                    </nav>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contatti</h3>
+                    <address class="not-italic text-white text-opacity-80">
+                        <p class="flex items-center gap-2 mb-2">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            Via Guglielmo Pepe 46, 30174 VE
+                        </p>
+                        <p>Tel: +39 348 740 1659</p>
+                        <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d9b8acadb6b5b8afb8bebeb0b6aaa9bcabb8b7bdb0b6b8b7bdabbcb899beb4b8b0b5f7bab6b4">[email&#160;protected]</a></p>
+                    </address>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Seguici</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/andreasperandiocarwash/" target="_blank" rel="noopener noreferrer" class="text-white text-opacity-80 hover:text-opacity-100 transition-colors">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61559960143907" target="_blank" rel="noopener noreferrer" class="text-white text-opacity-80 hover:text-opacity-100 transition-colors">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white border-opacity-10 text-center text-white text-opacity-60">
+                <p>&copy; <span id="currentYear"></span> Autolavaggio Sperandio Andrea. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Carousel functionality
+        const carouselImages = document.querySelectorAll('.carousel-image');
+        const prevButton = document.getElementById('prevSlide');
+        const nextButton = document.getElementById('nextSlide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            carouselImages.forEach((img, i) => {
+                img.style.opacity = i === index ? '1' : '0';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % carouselImages.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + carouselImages.length) % carouselImages.length;
+            showSlide(currentSlide);
+        }
+
+        prevButton.addEventListener('click', prevSlide);
+        nextButton.addEventListener('click', nextSlide);
+
+        // Auto-advance carousel
+        setInterval(nextSlide, 5000);
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
