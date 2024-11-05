@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autolavaggio Sperandio Andrea</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+          .price-color {
+            color: #ff0000;
+      
+        }
+        .animate-slide-up {
+            animation: slideUp 0.5s ease-out;
+        }
+        .bg-gradient {
+            background: linear-gradient(to bottom, #18181b, #000000);
+        }
+        .footer-fixed-bg {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient text-white">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm border-b border-white border-opacity-10">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="flex items-center gap-3">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Lavaggio%20Sofndo%20Bianco-989SB9sXjKH2p5MAyZGX7JsRPZWlrj.png" alt="Sperandio Andrea Car Wash" class="w-auto h-12">
+                    <span class="text-lg font-semibold hidden sm:inline-block">
+                        Autolavaggio Sperandio Andrea
+                    </span>
+                </a>
+                <button id="menuButton" class="text-white p-2">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                    <span class="sr-only">Menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-y-0 right-0 w-[300px] bg-black border-white/10 p-0 transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <nav class="flex flex-col">
+            <a href="/prenota" class="w-full bg-white text-black px-6 py-3 font-medium hover:bg-gray-200 transition-colors">Prenota Ora</a>
+            <a href="/servizi" class="w-full px-6 py-3 text-white hover:bg-white/10 transition-colors">Servizi</a>
+            <a href="/chi-siamo" class="w-full px-6 py-3 text-white hover:bg-white/10 transition-colors">Chi Siamo</a>
+            <a href="/contatti" class="w-full px-6 py-3 text-white hover:bg-white/10 transition-colors">Contatti</a>
+            <a href="/gallery" class="w-full px-6 py-3 text-white hover:bg-white/10 transition-colors">Photogallery</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <section class="py-24 md:py-32 animate-fade-in">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-6xl font-bold text-center mb-16 animate-slide-up">I Nostri Servizi</h1>
+                <div id="servicesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Services will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white border-opacity-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Collegamenti Rapidi</h3>
+                    <nav class="flex flex-col space-y-2">
+                        <a href="/prenota" class="text-white text-opacity-80 hover:text-white transition-colors">Prenota Ora</a>
+                        <a href="/servizi" class="text-white text-opacity-80 hover:text-white transition-colors">Servizi</a>
+                        <a href="/chi-siamo" class="text-white text-opacity-80 hover:text-white transition-colors">Chi Siamo</a>
+                        <a href="/contatti" class="text-white text-opacity-80 hover:text-white transition-colors">Contatti</a>
+                        <a href="/gallery" class="text-white text-opacity-80 hover:text-white transition-colors">Photogallery</a>
+                    </nav>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contatti</h3>
+                    <address class="not-italic text-white text-opacity-80">
+                        <p class="flex items-center gap-2 mb-2">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            Via Guglielmo Pepe 46, 30174 VE
+                        </p>
+                        <p>Tel: +39 348 740 1659</p>
+<p>Email: autolavaggiosperandioandrea@gmail.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Seguici</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/andreasperandiocarwash/" target="_blank" rel="noopener noreferrer" class="text-white text-opacity-80 hover:text-white transition-colors">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61559960143907" target="_blank" rel="noopener noreferrer" class="text-white text-opacity-80 hover:text-white transition-colors">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white border-opacity-10 text-center text-white text-opacity-60">
+                <p>&copy; <span id="currentYear"></span> Autolavaggio Sperandio Andrea. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Services data
+        const services = [
+            {
+                title: "Lavaggio Completo Van/Furgoni",
+                price: "€35,00",
+                image: "/services/VC.jpg",
+                features: [
+                    "Lavaggio esterno con spazzole antigraffio",
+                    "Cera auto-asciugante",
+                    "Nero gomme",
+                    "Pulizia battute delle portiere e vano di carico",
+                    "Pulizia interna con pistola Tornador® e detergenti professionali",
+                    "Aspirazione detriti e polvere",
+                    "Eliminazione ditate e aloni dai vetri"
+                ]
+            },
+            {
+                title: "Lavaggio Esterno Van/Furgoni",
+                price: "€25,00",
+                image: "/services/VE.jpg",
+                features: [
+                    "Lavaggio esterno con spazzole antigraffio",
+                    "Cera auto-asciugante",
+                    "Nero gomme",
+                    "Pulizia battute delle portiere"
+                ]
+            },
+            {
+                title: "Sanificazione con PMC",
+                price: "€25,00",
+                image: "/services/PMC.jpg",
+                description: "N.B: Questo servizio può essere aggiunto a qualunque tipo di lavaggio",
+                features: [
+                    "La bomboletta di ozono (presidio medico chirurgico certificato) uccide tutti i batteri che causano odori sgradevoli nell'abitacolo.",
+                    "Permette una disinfezione completa dell'auto in quanto è capace di eliminare le microparticelle e gli organismi insediati dentro i condotti dell'aria condizionata."
+                ]
+            },
+            {
+                title: "Lavaggio Completo",
+                price: "€25,00",
+                image: "/services/AC.jpg",
+                features: [
+                    "Lavaggio esterno con spazzole antigraffio",
+                    "Cera auto-asciugante",
+                    "Nero gomme",
+                    "Pulizia battute delle portiere e bagagliaio",
+                    "Pulizia interna con pistola Tornador® e detergenti professionali",
+                    "Aspirazione detriti e polvere",
+                    "Eliminazione ditate e aloni dai vetri"
+                ]
+            },
+            {
+                title: "Lavaggio Esterno",
+                price: "€15,00",
+                image: "/services/AE.jpg",
+                features: [
+                    "Lavaggio esterno con spazzole antigraffio",
+                    "Cera auto-asciugante",
+                    "Nero gomme",
+                    "Pulizia battute delle portiere"
+                ]
+            },
+            {
+                title: "Lavaggio A Mano",
+                price: "€30,00",
+                image: "/services/AM.jpg",
+                features: [
+                    "Lavaggio esterno con guanto in microfibra",
+                    "Cera auto-asciugante",
+                    "Pulizia battute delle portiere e bagagliaio",
+                    "Pulizia interna con pistola Tornador® e detergenti professionali",
+                    "Aspirazione detriti e polvere",
+                    "Eliminazione ditate e aloni dai vetri"
+                ]
+            }
+        ];
+
+        // Populate services
+        const servicesGrid = document.getElementById('servicesGrid');
+        services.forEach((service, index) => {
+            const serviceCard = document.createElement('div');
+            serviceCard.className = 'animate-fade-in';
+            serviceCard.style.animationDelay = `${index * 100}ms`;
+            serviceCard.innerHTML = `
+                <div class="bg-gray-100 border-none shadow-xl h-full flex flex-col rounded-lg overflow-hidden">
+                    <div class="relative aspect-[4/3] w-full overflow-hidden">
+                        <img src="${service.image}" alt="${service.title}" class="object-cover w-full h-full">
+                    </div>
+                    <div class="p-6 flex flex-col h-full">
+                        <h2 class="text-2xl text-black font-bold tracking-tight">${service.title}</h2>
+                        <p class="text-3xl font-bold price-color mt-2">${service.price}</p>
+                        ${service.description ? `<p class="text-gray-600 mb-4 italic">${service.description}</p>` : ''}
+                        <ul class="space-y-3 mb-6 flex-grow">
+                            ${service.features.map(feature => `
+                                <li class="flex items-start gap-2 text-gray-600">
+                                    <span class="text-primary mt-1">✓</span>
+                                    ${feature}
+                                </li>
+                            `).join('')}
+                        </ul>
+                        <a href="/prenota" class="block w-full bg-black hover:bg-black/90 text-white text-center py-2 px-4 rounded transition-colors mt-auto">
+                            Prenota ora
+                        </a>
+                    </div>
+                </div>
+            `;
+            servicesGrid.appendChild(serviceCard);
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-full');
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Intersection Observer for fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-fade-in').forEach(el => {
+            el.classList.add('opacity-0');
+            observer.observe(el);
+        });
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
