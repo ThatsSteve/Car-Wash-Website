@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autolavaggio Sperandio Andrea</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@5.0.0/dist/framer-motion.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-gradient-to-b {
+            background: linear-gradient(to bottom, #18181b, #000000);
+        }
+        .text-shadow {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+        }
+        .price-color {
+            color: #ff0000;
+        }
+        .tasto {
+            background-color: #ff0000;
+        }
+        .linea {
+            border-color: #ff0000;
+        }
+        .menu-open {
+            overflow: hidden;
+        }
+        .menu-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-zinc-900 to-black text-white">
+    <header class="fixed top-0 w-full z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm border-b border-white border-opacity-10">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="flex items-center gap-3">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Lavaggio%20Sofndo%20Bianco-989SB9sXjKH2p5MAyZGX7JsRPZWlrj.png" alt="Sperandio Andrea Car Wash" class="w-auto h-12">
+                    <span class="text-lg font-semibold hidden sm:inline-block">
+                        Autolavaggio Sperandio Andrea
+                    </span>
+                </a>
+                <button id="menuButton" class="text-white p-2 z-50">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <span class="sr-only">Menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="menuOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+    <nav id="mobileMenu" class="fixed top-0 right-0 w-[300px] h-full bg-black border-l border-white border-opacity-10 transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <div class="flex flex-col pt-16">
+            <a href="/prenota" class="w-full bg-white text-black px-6 py-3 font-medium hover:bg-gray-200 transition-colors">Prenota Ora</a>
+            <a href="/servizi" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Servizi</a>
+            <a href="/chi-siamo" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Chi Siamo</a>
+            <a href="/contatti" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Contatti</a>
+            <a href="/photogallery" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Photogallery</a>
+        </div>
+    </nav>
+
+    <section class="relative overflow-hidden pt-16">
+        <div class="absolute inset-0 z-0">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Senza%20titolo%20(600%20x%20794%20px)-MeLaDrL2u0cXcWDnLhDN9GNTh7sDfN.png" alt="White Toyota at car wash facility" class="object-cover w-full h-full object-bottom">
+            <div class="absolute inset-0 bg-gradient-to-b from-black via-black to-transparent opacity-60"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 z-10 relative py-24 md:py-32">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 border-b-2 linea border-[#fd384d] pb-4 inline-block">
+                    Da oltre 30 anni ci prendiamo<br>cura delle vostre auto
+                </h1>
+                <p class="text-lg md:text-xl text-white font-medium mb-8 max-w-2xl mx-auto drop-shadow-lg text-shadow">
+                    La nostra esperienza garantisce una pulizia impeccabile di ogni tipo di vettura,
+                    facendola tornare come nuova
+                </p>
+                <a href="/photogallery" class="inline-flex tasto items-center justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-[#fd384d] hover:bg-[#fd384d]/90 transition-colors duration-300 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-2">
+                        <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                        <circle cx="12" cy="13" r="3"></circle>
+                    </svg>
+                    Photogallery
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 border-b-2 border-[#fd384d] pb-4 inline-block">
+                Scopri i Nostri Servizi
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gray-100 rounded-lg shadow-xl p-6 flex flex-col">
+                    <div class="pb-4">
+                        <h3 class="text-2xl text-black font-bold tracking-tight">Lavaggio Completo</h3>
+                        <p class="text-3xl  font-bold price-color mt-2">€25,00</p>
+                    </div>
+                    <ul class="space-y-3 mb-6 flex-1">
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Lavaggio esterno con spazzole antigraffio
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Cera auto-asciugante
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Nero gomme
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Pulizia battute delle portiere e bagaglaio
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Pulizia interna con pistola Tornador® e detergenti professionali
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Aspirazione detriti e polvere
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Eliminazione ditate e aloni dai vetri
+                        </li>
+                    </ul>
+                    <a href="/prenota" class="w-full bg-black hover:bg-black/90 text-white py-2 px-4 rounded transition-colors duration-300 text-center">
+                        Prenota ora
+                    </a>
+                </div>
+                <div class="bg-gray-100 rounded-lg shadow-xl p-6 flex flex-col">
+                    <div class="pb-4">
+                        <h3 class="text-2xl text-black font-bold tracking-tight">Lavaggio Esterno</h3>
+                        <p class="text-3xl font-bold price-color mt-2">€15,00</p>
+                    </div>
+                    <ul class="space-y-3 mb-6 flex-1">
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Lavaggio esterno con spazzole antigraffio
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Cera auto-asciugante
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Nero gomme
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Pulizia battute delle portiere
+                        </li>
+                    </ul>
+                    <a href="/prenota" class="w-full bg-black hover:bg-black/90 text-white py-2 px-4 rounded transition-colors duration-300 text-center">
+                        Prenota ora
+                    </a>
+                </div>
+                <div class="bg-gray-100 rounded-lg shadow-xl p-6 flex flex-col">
+                    <div class="pb-4">
+                        <h3 class="text-2xl text-black font-bold tracking-tight">Lavaggio A Mano</h3>
+                        <p class="text-3xl font-bold price-color mt-2">€30,00</p>
+                    </div>
+                    <ul class="space-y-3 mb-6 flex-1">
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Lavaggio esterno con guanto in microfibra
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Cera auto-asciugante
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Pulizia battute delle portiere e bagaglaio
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Pulizia interna con pistola Tornador® e detergenti professionali
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Aspirazione detriti e polvere
+                        </li>
+                        <li class="flex items-start gap-2 text-gray-600">
+                            <span class="text-[#fd384d] mt-1">✓</span>
+                            Eliminazione ditate e aloni dai vetri
+                        </li>
+                    </ul>
+                    <a href="/prenota" class="w-full bg-black hover:bg-black/90 text-white py-2 px-4 rounded transition-colors duration-300 text-center">
+                        Prenota ora
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center p-8 bg-gray-100 rounded-2xl shadow-xl mb-12">
+                <h3 class="text-2xl font-bold mb-6 text-black">E Molto Altro anche per Furgoni</h3>
+                <a href="/servizi" class="inline-block tasto text-white  py-2 px-4 rounded transition-colors duration-300" >
+                    Scopri Tutti i Nostri Servizi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-12 border-t border-white border-opacity-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3  class="text-xl font-bold mb-4">Collegamenti Rapidi</h3>
+                    <nav class="flex flex-col space-y-2">
+                        <a href="/prenota" class="text-white text-opacity-80 hover:text-white transition-colors">Prenota Ora</a>
+                        <a href="/servizi" class="text-white text-opacity-80 hover:text-white transition-colors">Servizi</a>
+                        <a href="/chi-siamo" class="text-white text-opacity-80 hover:text-white transition-colors">Chi Siamo</a>
+                        <a href="/contatti" class="text-white text-opacity-80 hover:text-white transition-colors">Contatti</a>
+                        <a href="/photogallery" class="text-white text-opacity-80 hover:text-white transition-colors">Photogallery</a>
+                    </nav>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contatti</h3>
+                    <address class="not-italic text-white text-opacity-80">
+                        <p class="flex items-center gap-2 mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Via Guglielmo Pepe 46, 30174 VE
+                        </p>
+                        <p>Tel: +39 348 740 1659</p>
+<p>Email: autolavaggiosperandioandrea@gmail.com</p>                    </address>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Seguici</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/andreasperandiocarwash/" target="_blank" rel="noopener noreferrer" class="text-white text-opacity-80 hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61559960143907" target="_blank" rel="noopener noreferrer" class="text-white text-opacity-80 hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white border-opacity-10 text-center text-white text-opacity-60">
+                <p>&copy; <span id="currentYear"></span> Autolavaggio Sperandio Andrea. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Mobile menu functionality
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.style.transform = isMenuOpen ? 'translateX(0)' : 'translateX(100%)';
+            menuOverlay.style.display = isMenuOpen ? 'block' : 'none';
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        }
+
+        menuButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        menuOverlay.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (isMenuOpen && !mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                toggleMenu();
+            }
+        });
+
+        // Update current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Animate elements on scroll
+        const animateOnScroll = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(animateOnScroll, {
+            root: null,
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('h1, h2, p, .grid > div, .text-center').forEach(el => {
+            el.classList.add('opacity-0');
+            observer.observe(el);
+        });
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+    </style>
+</body>
+</html>
