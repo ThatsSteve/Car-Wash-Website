@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autolavaggio Sperandio Andrea - Contatti</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #18181b, #000000);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .backdrop-blur {
+            backdrop-filter: blur(8px);
+        }
+        .price-color {
+            color: #ff0000;
+        }
+        .card {
+            background-color: #f3f4f6;
+            border-radius: 0.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur border-b border-white border-opacity-10">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="flex items-center gap-3">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Lavaggio%20Sofndo%20Bianco-989SB9sXjKH2p5MAyZGX7JsRPZWlrj.png" alt="Sperandio Andrea Car Wash" class="w-auto h-12">
+                    <span class="text-lg font-semibold hidden sm:inline-block">
+                        Autolavaggio Sperandio Andrea
+                    </span>
+                </a>
+
+                <button id="menuButton" class="text-white p-2">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                    <span class="sr-only">Menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-y-0 right-0 w-[300px] bg-black border-l border-white border-opacity-10 transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <nav class="flex flex-col">
+            <a href="/prenota" class="w-full bg-white text-black px-6 py-3 font-medium hover:bg-gray-200 transition-colors">Prenota Ora</a>
+            <a href="/servizi" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Servizi</a>
+            <a href="/chi-siamo" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Chi Siamo</a>
+            <a href="/contatti" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Contatti</a>
+            <a href="/gallery" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Photogallery</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <section class="py-24 md:py-32 animate-fade-in-up">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-6xl font-bold text-center mb-16 animate-fade-in-up">Contatti</h1>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid gap-8 md:gap-12 animate-fade-in-up" style="animation-delay: 0.3s;">
+                        <!-- Contact Information -->
+                        <div class="card">
+                            <div class="p-6 md:p-8">
+                                <h2 class="text-2xl font-bold text-black price-color mb-6">Contattaci</h2>
+                                <div class="grid gap-4">
+                                    <a href="tel:+393487401659" class="flex items-center gap-3 text-xl text-gray-600 hover:text-blue-600 transition-colors">
+                                        <i data-lucide="phone" class="w-6 h-6"></i>
+                                        +39 348 740 1659
+                                    </a>
+                                    <a href="https://wa.me/393487401659" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-xl text-gray-600 hover:text-green-600 transition-colors">
+                                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                                        WhatsApp
+                                    </a>
+                                    <a href="mailto:autolavaggiosperandioandrea@gmail.com" class="flex items-center gap-3 text-xl text-gray-600 hover:text-red-600 transition-colors">
+                                        <i data-lucide="mail" class="w-6 h-6"></i>
+                                        autolavaggiosperandioandrea@gmail.com
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Via+Pepe+46+30172+Venezia+VE" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-xl text-gray-600 hover:text-blue-600 transition-colors">
+                                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                                        Via Pepe, 46, 30172 Venezia VE
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Google Maps Section -->
+                        <div class="card">
+                            <div class="p-6 md:p-8">
+                                <h2 class="text-2xl font-bold text-black price-color mb-6">Dove Siamo</h2>
+                                <div id="map" class="w-full h-96 rounded-lg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-white border-opacity-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Collegamenti Rapidi</h3>
+                    <nav class="flex flex-col space-y-2">
+                        <a href="/prenota" class="text-white text-opacity-80 hover:text-white transition-colors">Prenota Ora</a>
+                        <a href="/servizi" class="text-white text-opacity-80 hover:text-white transition-colors">Servizi</a>
+                        <a href="/chi-siamo" class="text-white text-opacity-80 hover:text-white transition-colors">Chi Siamo</a>
+                        <a href="/contatti" class="text-white text-opacity-80 hover:text-white transition-colors">Contatti</a>
+                        <a href="/gallery" class="text-white text-opacity-80 hover:text-white transition-colors">Photogallery</a>
+                    </nav>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contatti</h3>
+                    <address class="not-italic text-white text-opacity-80">
+                        <p class="flex items-center gap-2 mb-2">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            Via Guglielmo Pepe 46, 30174 VE
+                        </p>
+                        <p>Tel: +39 348 740 1659</p>
+                        <p>Email: autolavaggiosperandioandrea@gmail.com</p>
+                    </address>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Seguici</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/andreasperandiocarwash/" target="_blank" rel="noopener noreferrer" class="text-white text-opacity-80 hover:text-white transition-colors">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61559960143907" target="_blank" rel="noopener noreferrer" class="text-white text-opacity-80 hover:text-white transition-colors">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white border-opacity-10 text-center text-white text-opacity-60">
+                <p>&copy; <span id="currentYear"></span> Autolavaggio Sperandio Andrea. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        // Mobile menu functionality
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        let isMenuOpen = false;
+
+        menuButton.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.style.transform = isMenuOpen ? 'translateX(0)' : 'translateX(100%)';
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Simple animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-fade-in-up');
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+                if (isVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Initial check on page load
+
+        // Google Maps initialization
+        function initMap() {
+            const location = { lat: 45.4897, lng: 12.2558 }; // Coordinates for Via Pepe, 46, 30172 Venezia VE
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: location
+            });
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+</body>
+</html>
