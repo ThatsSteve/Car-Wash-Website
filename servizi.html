@@ -75,7 +75,7 @@
     <main class="pt-16">
         <section class="py-24 md:py-32 animate-fade-in-up">
             <div class="container mx-auto px-4">
-                <h1 class="text-4xl md:text-6xl font-bold text-center mb-16 animate-fade-in-up">I Nostri Servizi</h1>
+                <h1 class="text-4xl md:text-6xl font-bold text-center mb-16 animate-fade-in-up border-b-2 pb-4 inline-block">I Nostri Servizi</h1>
                 <div id="servicesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Services will be dynamically inserted here -->
                 </div>
@@ -94,7 +94,7 @@
                         <a href="/servizi" class="text-white text-opacity-80 hover:text-white transition-colors">Servizi</a>
                         <a href="/chi-siamo" class="text-white text-opacity-80 hover:text-white transition-colors">Chi Siamo</a>
                         <a href="/contatti" class="text-white text-opacity-80 hover:text-white transition-colors">Contatti</a>
-                        <a href="/photogallery" class="text-white text-opacity-80 hover:text-white transition-colors">Photogallery</a>
+                        <a href="/gallery" class="text-white text-opacity-80 hover:text-white transition-colors">Photogallery</a>
                     </nav>
                 </div>
                 <div>
@@ -226,12 +226,12 @@
                     </div>
                     <div class="p-6 flex flex-col h-full">
                         <h2 class="text-2xl text-black font-bold tracking-tight">${service.title}</h2>
-                        <p class="text-3xl font-bold text-red-600 mt-2">${service.price}</p>
+                        <p class="text-3xl font-bold price-color mt-2">${service.price}</p>
                         ${service.description ? `<p class="text-gray-600 mb-4 italic">${service.description}</p>` : ''}
                         <ul class="space-y-3 mb-6 flex-grow">
                             ${service.features.map(feature => `
                                 <li class="flex items-start gap-2 text-gray-600">
-                                    <span class="text-primary mt-1">✓</span>
+                                    <span class="text-[#fd384d] mt-1">✓</span>
                                     ${feature}
                                 </li>
                             `).join('')}
