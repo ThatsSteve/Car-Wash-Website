@@ -82,38 +82,40 @@
             <div class="container mx-auto px-4">
                 <h1 class="text-4xl md:text-6xl font-bold text-center mb-16 animate-fade-in-up">Contatti</h1>
                 
-                <div class="max-w-4xl mx-auto">
-                    <div class="grid gap-8 md:gap-12 animate-fade-in-up" style="animation-delay: 0.3s;">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid gap-8 md:grid-cols-2 animate-fade-in-up" style="animation-delay: 0.3s;">
                         <!-- Contact Information -->
-                        <div class="card">
-                            <div class="p-6 md:p-8">
-                                <h2 class="text-2xl font-bold text-black price-color mb-6">Contattaci</h2>
-                                <div class="grid gap-4">
-                                    <a href="tel:+393487401659" class="flex items-center gap-3 text-xl text-gray-600 hover:text-blue-600 transition-colors">
-                                        <i data-lucide="phone" class="w-6 h-6"></i>
-                                        +39 348 740 1659
-                                    </a>
-                                    <a href="https://wa.me/393487401659" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-xl text-gray-600 hover:text-green-600 transition-colors">
-                                        <i data-lucide="message-circle" class="w-6 h-6"></i>
-                                        WhatsApp
-                                    </a>
-                                    <a href="mailto:autolavaggiosperandioandrea@gmail.com" class="flex items-center gap-3 text-xl text-gray-600 hover:text-red-600 transition-colors">
-                                        <i data-lucide="mail" class="w-6 h-6"></i>
-                                        autolavaggiosperandioandrea@gmail.com
-                                    </a>
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Via+Pepe+46+30172+Venezia+VE" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-xl text-gray-600 hover:text-blue-600 transition-colors">
-                                        <i data-lucide="map-pin" class="w-6 h-6"></i>
-                                        Via Pepe, 46, 30172 Venezia VE
-                                    </a>
+                        <div class="card h-full">
+                            <div class="p-6 md:p-8 flex flex-col justify-between h-full">
+                                <div>
+                                    <h2 class="text-2xl font-bold text-black price-color mb-6">Contattaci</h2>
+                                    <div class="grid gap-4">
+                                        <a href="tel:+393487401659" class="flex items-center gap-3 text-xl text-gray-600 hover:text-blue-600 transition-colors">
+                                            <i data-lucide="phone" class="w-6 h-6"></i>
+                                            +39 348 740 1659
+                                        </a>
+                                        <a href="https://wa.me/393487401659" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-xl text-gray-600 hover:text-green-600 transition-colors">
+                                            <i data-lucide="message-circle" class="w-6 h-6"></i>
+                                            WhatsApp
+                                        </a>
+                                        <a href="mailto:autolavaggiosperandioandrea@gmail.com" class="flex items-center gap-3 text-xl text-gray-600 hover:text-red-600 transition-colors">
+                                            <i data-lucide="mail" class="w-6 h-6"></i>
+                                            Mail
+                                        </a>
+                                        <a href="https://www.google.com/maps/search/?api=1&query=Via+Pepe+46+30172+Venezia+VE" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-xl text-gray-600 hover:text-blue-600 transition-colors">
+                                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                                            Via Pepe, 46, 30172 Venezia VE
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Google Maps Section -->
-                        <div class="card">
-                            <div class="p-6 md:p-8">
+                        <div class="card h-full">
+                            <div class="p-6 md:p-8 flex flex-col h-full">
                                 <h2 class="text-2xl font-bold text-black price-color mb-6">Dove Siamo</h2>
-                                <div id="map" class="w-full h-96 rounded-lg"></div>
+                                <div id="map" class="w-full flex-grow rounded-lg"></div>
                             </div>
                         </div>
                     </div>
