@@ -4,220 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autolavaggio Sperandio Andrea - Prenotazione</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(to bottom, #18181b, #000000);
-            color: white;
-            min-height: 100vh;
-        }
-
-        .backdrop-blur {
-            backdrop-filter: blur(8px);
-        }
-       .price-color {
-            color: #ff0000;
-        }
-        .card {
-            background-color: #f3f4f6;
-            border-radius: 0.5rem;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .animate-fade-in-up {
-            animation: fadeInUp 0.5s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/site.css">
 </head>
-<body class="text-white">
-    <!-- Header -->
-    <header class="fixed top-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur border-b border-white border-opacity-10">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
-                <a href="/" class="flex items-center gap-3">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Lavaggio%20Sofndo%20Bianco-989SB9sXjKH2p5MAyZGX7JsRPZWlrj.png" alt="Sperandio Andrea Car Wash" class="w-auto h-12">
-                    <span class="text-lg font-semibold hidden sm:inline-block">
-                        Autolavaggio Sperandio Andrea
-                    </span>
-                </a>
-
-                <button id="menuButton" class="text-white p-2">
-                    <i data-feather="menu" class="h-6 w-6"></i>
-                    <span class="sr-only">Menu</span>
-                </button>
-            </div>
+<body>
+    <header class="site-header">
+        <div class="container header__inner">
+            <a class="brand" href="index.html" aria-label="Torna alla home">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Lavaggio%20Sofndo%20Bianco-989SB9sXjKH2p5MAyZGX7JsRPZWlrj.png" alt="Autolavaggio Sperandio Andrea" class="brand__logo">
+                <span class="brand__text">Autolavaggio Sperandio Andrea</span>
+            </a>
+            <nav class="desktop-nav" aria-label="Principale">
+                <a class="nav-link" href="servizi.html" aria-label="Servizi">Servizi</a>
+                <a class="nav-link" href="chi-siamo.html" aria-label="Chi siamo">Chi Siamo</a>
+                <a class="nav-link" href="photogallery.html" aria-label="Photogallery">Photogallery</a>
+                <a class="nav-link" href="contatti.html" aria-label="Contatti">Contatti e Orari</a>
+            </nav>
+            <button class="nav-toggle" data-menu-button aria-expanded="false" aria-controls="site-menu" aria-label="Apri menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <span class="sr-only">Apri menu</span>
+            </button>
         </div>
+        <div id="site-menu" class="nav-panel" data-menu-panel>
+            <button class="nav-close" type="button" data-menu-close aria-label="Chiudi menu">X</button>
+            <nav class="nav-panel__links" aria-label="Menu mobile">
+                <a href="prenota.html" aria-label="Prenota ora">Prenota ora</a>
+                <a href="servizi.html" aria-label="Servizi">Servizi</a>
+                <a href="chi-siamo.html" aria-label="Chi siamo">Chi siamo</a>
+                <a href="photogallery.html" aria-label="Photogallery">Photogallery</a>
+                <a href="contatti.html" aria-label="Contatti">Contatti e Orari</a>
+            </nav>
+        </div>
+        <div class="nav-overlay" data-menu-overlay></div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="fixed inset-y-0 right-0 w-[300px] bg-black border-l border-white border-opacity-10 transform translate-x-full transition-transform duration-300 ease-in-out z-50">
-        <nav class="flex flex-col">
-            <a href="/prenota" class="w-full bg-white text-black px-6 py-3 font-medium hover:bg-gray-200 transition-colors">Prenota Ora</a>
-            <a href="/servizi" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Servizi</a>
-            <a href="/chi-siamo" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Chi Siamo</a>
-            <a href="/contatti" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Contatti</a>
-            <a href="/photogallery.html" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Photogallery</a>
-        </nav>
-    </div>
-
-    <!-- Main Content -->
-    <main class="pt-16">
-        <section class="py-24 md:py-32 animate-fade-in-up">
-            <div class="container mx-auto px-4">
-                <h1 class="text-4xl md:text-6xl font-bold text-center mb-16 animate-fade-in-up">Prenotazione</h1>
+    <main id="main-content">
+        <section class="section section--inset">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow">Prenotazione</p>
+                    <h1 class="headline">Scegli il canale piu comodo per prenotare.</h1>
+                    <p class="lead">Rispondiamo rapidamente per offrirti la fascia oraria migliore.</p>
+                </div>
                 
-                <div class="max-w-3xl mx-auto">
-                    <div class="grid gap-8 md:gap-12 animate-fade-in-up" style="animation-delay: 0.3s;">
-                        <!-- Phone Booking Section -->
-                        <div class="card">
-                            <div class="p-6 md:p-8">
-                                <h2 class="text-2xl font-bold text-black price-color mb-6">Chiamata o Messaggio:</h2>
-                                <div class="grid gap-4">
-                                    <a href="tel:+393487401659" class="flex items-center gap-3 text-xl text-gray-600 hover:text-blue-600 transition-colors">
-                                        <i data-feather="phone" class="w-6 h-6"></i>
-                                        +39 348 740 1659
-                                    </a>
-                                    <a href="https://wa.me/393487401659" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-xl text-gray-600 hover:text-blue-600 transition-colors">
-                                        <i data-feather="message-circle" class="w-6 h-6"></i>
-                                        Invia un messaggio WhatsApp
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Chiamata o Messaggio -->
+                <div class="surface-card" data-reveal style="margin-bottom: 48px; text-align: center; border-color: rgba(253, 56, 77, 0.3);">
+                    <h2>Chiamata o Messaggio</h2>
+                    <p class="text-muted" style="margin-bottom: 32px;">Clicca qui sotto per parlare direttamente con noi o scriverci su WhatsApp.</p>
+                    <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+                        <a class="btn btn--primary btn--pulse" href="tel:+393487401659" aria-label="Chiama ora" style="font-size: 1.25rem; padding: 18px 48px; width: 100%; max-width: 340px;">Chiama ora</a>
+                        <a class="btn btn--ghost btn--pulse-whatsapp" href="https://wa.me/393487401659" target="_blank" rel="noopener noreferrer" aria-label="Apri WhatsApp" style="font-size: 1.15rem; padding: 16px 48px; width: 100%; max-width: 340px; color: #25D366; border-color: #25D366;">Invia un messaggio</a>
+                    </div>
+                </div>
 
-                        <!-- Online Booking Section -->
-                        <div class="card">
-                            <div class="p-6 md:p-8">
-                                <h2 class="text-2xl font-bold text-black price-color mb-6">Online:</h2>
+                <!-- Orari e Mappa -->
+                <div class="luxury-split" style="margin-bottom: 48px;">
+                    <div class="hours-card" data-reveal>
+                        <h2>Orari di apertura</h2>
+                        <ul class="hours-list">
+                            <li data-day="1"><span>Lunedì</span><span class="hours-line"></span><strong>08:00 - 17:30</strong></li>
+                            <li data-day="2"><span>Martedì</span><span class="hours-line"></span><strong>08:00 - 17:30</strong></li>
+                            <li data-day="3"><span>Mercoledì</span><span class="hours-line"></span><strong>08:00 - 17:30</strong></li>
+                            <li data-day="4"><span>Giovedì</span><span class="hours-line"></span><strong>08:00 - 17:30</strong></li>
+                            <li data-day="5"><span>Venerdì</span><span class="hours-line"></span><strong>08:00 - 17:30</strong></li>
+                            <li data-day="6" class="is-closed"><span>Sabato</span><span class="hours-line"></span><strong>Chiuso</strong></li>
+                            <li data-day="0" class="is-closed"><span>Domenica</span><span class="hours-line"></span><strong>Chiuso</strong></li>
+                        </ul>
+                    </div>
 
-                                <div class="grid gap-4">
-                                    <div class="flex items-center gap-3 text-xl text-gray-600">
-                                        <i data-feather="clock" class="w-6 h-6"></i>
-                                        Presto disponibile
-                                    </div>
-                                    <p class="text-gray-600 mt-4">
-                                        Rimani aggiornato sui nostri profili social per scoprire quando
-                                        verrà implementata questa funzione
-                                    </p>
-                                    <div class="flex gap-4 mt-2">
-                                        <a href="https://www.instagram.com/andreasperandiocarwash/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
-                                            <i data-feather="instagram" class="w-5 h-5"></i>
-                                            Instagram
-                                        </a>
-                                        <a href="https://www.facebook.com/profile.php?id=61559960143907" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
-                                            <i data-feather="facebook" class="w-5 h-5"></i>
-                                            Facebook
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="surface-card" data-reveal style="--delay: 0.05s;">
+                        <h2>Dove siamo</h2>
+                        <div class="media-frame" style="height: 100%; min-height: 300px; margin-top: 16px;">
+                            <iframe title="Mappa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.964815306456!2d12.244720977642322!3d45.49065327107426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eb550ba291547%3A0x112a3870d1b807b1!2sAutolavaggio%20Sperandio%20Andrea!5e0!3m2!1sit!2sit!4v1778770076041!5m2!1sit!2sit" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width: 100%; height: 100%; border: 0;"></iframe>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Prenotazione Online -->
+                <div class="surface-card" data-reveal style="text-align: center;">
+                    <h2>Prenotazione Online</h2>
+                    <p class="text-ink-muted">Presto disponibile. Seguici sui social per sapere quando attiviamo il booking online.</p>
+                    <div class="footer-links" style="justify-content: center; margin-top: 24px;">
+                        <a href="https://www.instagram.com/andreasperandiocarwash/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61559960143907" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-black py-12 border-t border-white border-opacity-10">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="site-footer">
+        <div class="container section section--tight">
+            <div class="footer-grid">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Collegamenti Rapidi</h3>
-                    <nav class="flex flex-col space-y-2">
-                        <a href="/prenota" class="text-white text-opacity-80 hover:text-white transition-colors">Prenota Ora</a>
-                        <a href="/servizi" class="text-white text-opacity-80 hover:text-white transition-colors">Servizi</a>
-                        <a href="/chi-siamo" class="text-white text-opacity-80 hover:text-white transition-colors">Chi Siamo</a>
-                        <a href="/contatti" class="text-white text-opacity-80 hover:text-white transition-colors">Contatti</a>
-                        <a href="/photogallery.html" class="text-white text-opacity-80 hover:text-white transition-colors">Photogallery</a>
-                    </nav>
+                    <h3>Collegamenti Rapidi</h3>
+                    <div class="footer-links">
+                        <a href="prenota.html" aria-label="Prenota ora">Prenota Ora</a>
+                        <a href="servizi.html" aria-label="Servizi">Servizi</a>
+                        <a href="chi-siamo.html" aria-label="Chi siamo">Chi Siamo</a>
+                        <a href="contatti.html" aria-label="Contatti">Contatti</a>
+                        <a href="photogallery.html" aria-label="Photogallery">Photogallery</a>
+                    </div>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Contatti</h3>
-                    <address class="not-italic text-white text-opacity-80">
-                        <p class="flex items-center gap-2 mb-2">
-                            <i data-feather="map-pin" class="w-5 h-5"></i>
-                            Via Guglielmo Pepe 46, 30174 VE
-                        </p>
-                        <p>Tel: +39 348 740 1659</p>
-                        <p>Email: autolavaggiosperandioandrea@gmail.com</p>
-                    </address>
+                    <h3>Contatti</h3>
+                    <div class="footer-links">
+                        <span>Via Guglielmo Pepe 46, 30174 VE</span>
+                        <span>Tel: +39 348 740 1659</span>
+                        <span>Email: autolavaggiosperandioandrea@gmail.com</span>
+                    </div>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Seguici</h3>
-                    <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/andreasperandiocarwash/" target="_blank" rel="noopener noreferrer" class="text-white text-opacity-80 hover:text-white transition-colors">
-                            <i data-feather="instagram" class="w-6 h-6"></i>
-                            <span class="sr-only">Instagram</span>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=61559960143907" target="_blank" rel="noopener noreferrer" class="text-white text-opacity-80 hover:text-white transition-colors">
-                            <i data-feather="facebook" class="w-6 h-6"></i>
-                            <span class="sr-only">Facebook</span>
-                        </a>
+                    <h3>Seguici</h3>
+                    <div class="footer-links">
+                        <a href="https://www.instagram.com/andreasperandiocarwash/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61559960143907" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
                     </div>
                 </div>
             </div>
-            <div class="mt-8">
-                <h3 class="text-xl font-bold mb-4">Posizione</h3>
-                <p class="text-white text-opacity-80 mb-4">Via Guglielmo Pepe 46, 30174 VE</p>
-                <div class="overflow-hidden rounded-lg">
-                    <iframe title="Mappa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.964815306456!2d12.244720977642322!3d45.49065327107426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eb550ba291547%3A0x112a3870d1b807b1!2sAutolavaggio%20Sperandio%20Andrea!5e0!3m2!1sit!2sit!4v1778770076041!5m2!1sit!2sit" width="600" height="450" class="w-full h-64" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-            <div class="mt-8 pt-8 border-t border-white border-opacity-10 text-center text-white text-opacity-60">
-                <p>&copy; <span id="currentYear"></span> Autolavaggio Sperandio Andrea. Tutti i diritti riservati.</p>
+            <div class="footer-bottom">
+                <p>&copy; <span data-current-year></span> Autolavaggio Sperandio Andrea. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Mobile menu functionality
-        const menuButton = document.getElementById('menuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
-        let isMenuOpen = false;
-
-        menuButton.addEventListener('click', () => {
-            isMenuOpen = !isMenuOpen;
-            mobileMenu.style.transform = isMenuOpen ? 'translateX(0)' : 'translateX(100%)';
-        });
-
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Initialize Feather icons
-        feather.replace();
-
-        // Simple animation on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.animate-fade-in-up');
-            elements.forEach(element => {
-                const rect = element.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-                if (isVisible) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        }
-
-        window.addEventListener('scroll', animateOnScroll);
-        animateOnScroll(); // Initial check on page load
-    </script>
+    <script src="static/site.js"></script>
 </body>
 </html>

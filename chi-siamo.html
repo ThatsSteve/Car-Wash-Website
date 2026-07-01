@@ -1,214 +1,292 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi Siamo - Autolavaggio Sperandio Andrea</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .bg-gradient {
-            background: linear-gradient(to bottom, #18181b, #000000);
-        }
-        .carousel-image {
-            transition: opacity 0.5s ease-in-out;
-        }
-        .menu-content {
-            transform: translateX(100%);
-            transition: transform 0.3s ease-in-out;
-        }
-        .menu-content.open {
-            transform: translateX(0);
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-            
-        }
-        .price-color {
-            color: #ff0000;
-      
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.5s ease-out;
-        }
-        .animate-slide-up {
-            animation: slideUp 0.5s ease-out;
-          
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/site.css">
 </head>
-<body class="min-h-screen bg-gradient text-white">
-    <!-- Header -->
-    <header class="fixed top-0 w-full z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm border-b border-white border-opacity-10">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
-                <a href="/" class="flex items-center gap-3">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Lavaggio%20Sofndo%20Bianco-989SB9sXjKH2p5MAyZGX7JsRPZWlrj.png" alt="Sperandio Andrea Car Wash" class="w-auto h-12">
-                    <span class="text-lg font-semibold hidden sm:inline-block">
-                        Autolavaggio Sperandio Andrea
-                    </span>
-                </a>
-                <button id="menuToggle" class="text-white p-2">
-                    <i data-lucide="menu" class="h-6 w-6"></i>
-                    <span class="sr-only">Menu</span>
-                </button>
-            </div>
+
+<body>
+    <header class="site-header">
+        <div class="container header__inner">
+            <a class="brand" href="index.html" aria-label="Torna alla home">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Lavaggio%20Sofndo%20Bianco-989SB9sXjKH2p5MAyZGX7JsRPZWlrj.png"
+                    alt="Autolavaggio Sperandio Andrea" class="brand__logo">
+                <span class="brand__text">Autolavaggio Sperandio Andrea</span>
+            </a>
+            <nav class="desktop-nav" aria-label="Principale">
+                <a class="nav-link" href="servizi.html" aria-label="Servizi">Servizi</a>
+                <a class="nav-link" href="chi-siamo.html" aria-label="Chi siamo">Chi Siamo</a>
+                <a class="nav-link" href="photogallery.html" aria-label="Photogallery">Photogallery</a>
+                <a class="nav-link" href="contatti.html" aria-label="Contatti">Contatti e Orari</a>
+            </nav>
+            <a class="btn btn--small btn--primary header__cta" href="prenota.html" aria-label="Prenota">Prenota</a>
+            <button class="nav-toggle" data-menu-button aria-expanded="false" aria-controls="site-menu"
+                aria-label="Apri menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <span class="sr-only">Apri menu</span>
+            </button>
         </div>
+        <div id="site-menu" class="nav-panel" data-menu-panel>
+            <button class="nav-close" type="button" data-menu-close aria-label="Chiudi menu">X</button>
+            <nav class="nav-panel__links" aria-label="Menu mobile">
+                <a href="prenota.html" aria-label="Prenota ora">Prenota ora</a>
+                <a href="servizi.html" aria-label="Servizi">Servizi</a>
+                <a href="chi-siamo.html" aria-label="Chi siamo">Chi siamo</a>
+                <a href="photogallery.html" aria-label="Photogallery">Photogallery</a>
+                <a href="contatti.html" aria-label="Contatti">Contatti e Orari</a>
+            </nav>
+        </div>
+        <div class="nav-overlay" data-menu-overlay></div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="fixed inset-y-0 right-0 w-[300px] bg-black border-l border-white border-opacity-10 z-50 menu-content">
-        <nav class="flex flex-col">
-            <a href="/prenota" class="w-full bg-white text-black px-6 py-3 font-medium hover:bg-gray-200 transition-colors">Prenota Ora</a>
-            <a href="/servizi" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Servizi</a>
-            <a href="/chi-siamo" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Chi Siamo</a>
-            <a href="/contatti" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Contatti</a>
-            <a href="/photogallery.html" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-colors">Photogallery</a>
-        </nav>
-    </div>
+    <main id="main-content">
+        <section class="section section--method" id="chi-siamo" style="padding-top: 120px;">
+            <div class="water-particles"></div>
+            <div class="container" style="position: relative; z-index: 1;">
+                <div class="about-story about-story--solo">
+                    <div class="about-story__content" data-reveal
+                        style="max-width: 900px; padding: 0 24px; margin: 0 auto; text-align: center;">
+                        <p class="eyebrow">La nostra storia</p>
+                        <h1 class="headline" style="margin-bottom: 32px;">Una professione che unisce artigianalità e
+                            innovazione.</h1>
 
-    <!-- Main Content -->
-    <main class="pt-16">
-        <section class="py-24 md:py-32 animate-fade-in">
-            <div class="container mx-auto px-4">
-                <h1 class="text-4xl md:text-6xl font-bold text-center mb-16 animate-slide-up">Chi Siamo</h1>
-                
-                <div class="mb-16 animate-slide-up" style="animation-delay: 0.3s;">
-                    <div class="bg-gray-100 rounded-lg shadow-xl overflow-hidden">
-                        <div class="p-8 md:p-12">
-                            <div class="max-w-3xl mx-auto">
-                                <p class="text-gray-800 mb-6 text-lg leading-relaxed">
-                                    Con oltre 30 anni di esperienza nel settore della pulizia e del detailing per veicoli, il nostro autolavaggio si distingue per qualità e attenzione al cliente. Dalla nostra prima sede in via Forte Marghera (ex TNT Traco), abbiamo fatto della cura dell'auto una vera e propria missione, evolvendoci per offrire un servizio che va oltre le aspettative.
-                                </p>
-                                <p class="text-gray-800 mb-6 text-lg leading-relaxed">
-                                    Utilizziamo solo i migliori prodotti del marchio Kimicar, garanzia di eccellenza nell'industria, per trattare ogni veicolo con precisione e dedizione. Il nostro obiettivo è sempre stato uno solo: restituire ai clienti la soddisfazione di vedere la propria auto tornare come nuova, grazie a un livello di detailing che non lascia nulla al caso.
-                                </p>
-                                <p class="text-gray-800 text-lg leading-relaxed price-color font-semibold">
-                                    Siamo qui per valorizzare ogni dettaglio, al servizio della tua auto e della tua soddisfazione.
-                                </p>
-                            </div>
+                        <div class="about-text-container" style="text-align: center;">
+                            <p class="lead"
+                                style="max-width: none; margin: 0 auto 24px auto; color: rgba(255, 255, 255, 0.9);">
+                                Da oltre 30 anni, la nostra passione per il detailing si fonde con l'innovazione per far
+                                tornare ogni auto come nuova. Partiti dalla storica sede di via Forte Marghera e
+                                successivamente approdati in Piazza Barche, abbiamo trasformato la cura dell'auto in una
+                                vera e propria missione di eccellenza.
+                            </p>
+                            <p class="lead"
+                                style="max-width: none; margin: 0 auto 24px auto; color: rgba(255, 255, 255, 0.9);">
+                                Non ci limitiamo a "lavare" la tua vettura. Ogni auto viene accolta con un <strong>check
+                                    iniziale approfondito</strong> e una valutazione minuziosa delle condizioni della
+                                vernice e degli interni. Questo ci permette di suggerirti il miglior approccio di
+                                pulizia, personalizzato per il tuo veicolo, trattando ogni superficie con il massimo
+                                rispetto.
+                            </p>
+                            <p class="lead"
+                                style="max-width: none; margin: 0 auto 24px auto; color: rgba(255, 255, 255, 0.9);">
+                                Lavoriamo esclusivamente con strumenti di precisione, come il Tornador per gli interni,
+                                e ci affidiamo ai <strong>prodotti Kimicar Pro</strong>, sinonimo indiscusso di garanzia
+                                e qualità nell'industria del car care. Questo approccio sartoriale è essenziale per
+                                trattare con dedizione ogni dettaglio, dai cerchi in lega alle pelli più delicate.
+                            </p>
+                            <p class="lead"
+                                style="max-width: none; margin: 0 auto 40px auto; color: rgba(255, 255, 255, 0.9);">
+                                Il nostro unico obiettivo è restituirti l'emozione e la soddisfazione di guidare un'auto
+                                perfetta, protetta e curata maniacalmente in ogni sua fase.
+                            </p>
+                        </div>
+
+                        <div class="about-story__actions"
+                            style="justify-content: center; display: flex; gap: 16px; flex-wrap: wrap;">
+                            <a class="btn btn--primary" href="prenota.html" aria-label="Prenota un appuntamento">Prenota
+                                un appuntamento</a>
+                            <a class="btn btn--ghost" href="servizi.html" aria-label="Scopri i servizi">Scopri i
+                                servizi</a>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="relative aspect-[16/9] w-full overflow-hidden rounded-lg shadow-xl animate-slide-up" style="animation-delay: 0.4s;">
-                    <img src="/placeholder.svg?height=600&width=1200" alt="Carousel Image 1" class="carousel-image absolute inset-0 w-full h-full object-cover">
-                    <img src="/placeholder.svg?height=600&width=1200" alt="Carousel Image 2" class="carousel-image absolute inset-0 w-full h-full object-cover opacity-0">
-                    <img src="/placeholder.svg?height=600&width=1200" alt="Carousel Image 3" class="carousel-image absolute inset-0 w-full h-full object-cover opacity-0">
-                    <button id="prevSlide" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full transition-opacity hover:bg-opacity-70">
-                        <i data-lucide="chevron-left" class="h-6 w-6"></i>
-                    </button>
-                    <button id="nextSlide" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full transition-opacity hover:bg-opacity-70">
-                        <i data-lucide="chevron-right" class="h-6 w-6"></i>
-                    </button>
+        <section class="section section--image section--image-spray">
+            <div class="container section-image__content" data-reveal>
+                <p class="eyebrow">Prodotti Kimicar</p>
+                <h2 class="section-title">Detergenti selezionati per superfici delicate.</h2>
+                <p class="lead">
+                    Selezioniamo detergenti e prodotti per la pulizia Kimicar, scelti per rispettare vernici,
+                    pelli e superfici delicate senza compromessi.
+                </p>
+            </div>
+        </section>
+
+        <section class="section section--image section--image-shampoo">
+            <div class="container section-image__content" data-reveal>
+                <p class="eyebrow">Shampoo premium</p>
+                <h2 class="section-title">pH bilanciato, finitura profonda.</h2>
+                <p class="lead">
+                    Formule ad alte prestazioni per preservare brillantezza, protezione e profondita del colore.
+                </p>
+            </div>
+        </section>
+
+        <section class="section section--image section--image-tornador">
+            <div class="container section-image__content" data-reveal>
+                <p class="eyebrow">Tecniche di lavaggio</p>
+                <h2 class="section-title">Tornador e aspirazione profonda.</h2>
+                <p class="lead">
+                    Le tecniche di lavaggio combinano Tornador, aspirazione profonda e passaggi calibrati per rispettare
+                    pelli,
+                    tessuti e superfici delicate.
+                </p>
+            </div>
+        </section>
+
+        <section class="section section--about">
+            <div class="container">
+                <div class="about-products">
+                    <div class="about-products__intro" data-reveal>
+                        <p class="eyebrow">I prodotti e il metodo</p>
+                        <h3>Formule high-end e processi controllati in ogni fase.</h3>
+                        <p class="text-muted">
+                            Usiamo linee professionali ad alte prestazioni, con pH bilanciato, lubrificazione
+                            controllata e protezioni dedicate. Ogni trattamento e calibrato in base ai materiali.
+                        </p>
+                        <ul class="about-products__list" data-stagger="0.05">
+                            <li data-reveal>Detergenti sicuri per vernici delicate e finiture opache.</li>
+                            <li data-reveal>Microfibra premium e accessori dedicati alle superfici sensibili.</li>
+                            <li data-reveal>Asciugatura e check visivo finale.</li>
+                        </ul>
+                    </div>
+                    <div class="product-grid" data-stagger="0.08">
+                        <article class="product-card" data-reveal>
+                            <p class="eyebrow">Linea professionale</p>
+                            <h3>Kimicar Pro System</h3>
+                            <p class="text-muted">
+                                Detergenti bilanciati e sicuri per vernici sensibili, cromature e finiture opache.
+                            </p>
+
+                        </article>
+                        <article class="product-card" data-reveal>
+                            <p class="eyebrow">Protezione</p>
+                            <h3>Cere e Shampoo</h3>
+                            <p class="text-muted">
+                                Strati protettivi ad alta brillantezza per esaltare la profondita del colore.
+                            </p>
+
+                        </article>
+                        <article class="product-card" data-reveal>
+                            <p class="eyebrow">Interni luxury</p>
+                            <h3>Pelle e microfibra</h3>
+                            <p class="text-muted">
+                                Trattamenti specifici per preservare elasticita, colore e morbidezza dei rivestimenti.
+                            </p>
+
+                        </article>
+                    </div>
+                </div>
+
+                <div class="about-focus">
+                    <div class="section-head section-head--compact" data-reveal>
+                        <p class="eyebrow">Cura maniacale</p>
+                        <h2 class="section-title">Focus dedicati alle zone piu delicate.</h2>
+                        <p class="lead">Ogni superficie viene trattata con tecniche specifiche per evitare stress e
+                            aloni.</p>
+                    </div>
+                    <div class="focus-grid" data-stagger="0.08">
+                        <article class="focus-card" data-reveal>
+                            <span class="icon-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <path
+                                        d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7 2.9 7 2.9s-2.28 6.16-3.29 7.16C2.57 11 2 12.08 2 13.25c0 2.22 1.8 4.05 4 4.05z" />
+                                    <path
+                                        d="M12.56 6.6A10.97 10.97 0 0 1 14 8c2.53 2.53 3.5 3.5 3.5 5 0 1.93-1.57 3.5-3.5 3.5a3.5 3.5 0 0 1-1.46-.32" />
+                                </svg>
+                            </span>
+                            <h3>Trattamento Pellami</h3>
+                            <p class="text-muted">Pulizia delicata per interni sempre morbidi.
+                            </p>
+                        </article>
+                        <article class="focus-card" data-reveal>
+                            <span class="icon-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <path
+                                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                                    <path d="M5 3v4" />
+                                    <path d="M19 17v4" />
+                                    <path d="M3 5h4" />
+                                    <path d="M17 19h4" />
+                                </svg>
+                            </span>
+                            <h3>Cura Plastiche e Carbonio</h3>
+                            <p class="text-muted">Dettagli high-gloss protetti da micrograffi e residui aggressivi.</p>
+                        </article>
+                        <article class="focus-card" data-reveal>
+                            <span class="icon-badge">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true">
+                                    <path
+                                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.89 0 4.78 1 6.89 2a1 1 0 0 1 1 1v7z" />
+                                </svg>
+                            </span>
+                            <h3>Tecniche antigraffio</h3>
+                            <p class="text-muted">Prelavaggio, contatto controllato e asciugatura assistita.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--tight">
+            <div class="container" data-reveal>
+                <div class="surface-card">
+                    <h2>Vuoi affidare la tua auto a mani esperte?</h2>
+                    <p class="text-ink-muted">Prenota un lavaggio da noi e scopri il nostro livello di dettaglio.</p>
+                    <a class="btn btn--primary" href="prenota.html" aria-label="Prenota ora">Prenota ora</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-black py-12 border-t border-white border-opacity-10">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="site-footer">
+        <div class="container section section--tight">
+            <div class="footer-grid">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Collegamenti Rapidi</h3>
-                    <nav class="flex flex-col space-y-2">
-                        <a href="/prenota" class="text-white text-opacity-80 hover:text-opacity-100 transition-colors">Prenota Ora</a>
-                        <a href="/servizi" class="text-white text-opacity-80 hover:text-opacity-100 transition-colors">Servizi</a>
-                        <a href="/chi-siamo" class="text-white text-opacity-80 hover:text-opacity-100 transition-colors">Chi Siamo</a>
-                        <a href="/contatti" class="text-white text-opacity-80 hover:text-opacity-100 transition-colors">Contatti</a>
-                        <a href="/photogallery.html" class="text-white text-opacity-80 hover:text-opacity-100 transition-colors">Photogallery</a>
-                    </nav>
+                    <h3>Collegamenti Rapidi</h3>
+                    <div class="footer-links">
+                        <a href="prenota.html" aria-label="Prenota ora">Prenota Ora</a>
+                        <a href="servizi.html" aria-label="Servizi">Servizi</a>
+                        <a href="chi-siamo.html" aria-label="Chi siamo">Chi Siamo</a>
+                        <a href="contatti.html" aria-label="Contatti">Contatti</a>
+                        <a href="photogallery.html" aria-label="Photogallery">Photogallery</a>
+                    </div>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Contatti</h3>
-                    <address class="not-italic text-white text-opacity-80">
-                        <p class="flex items-center gap-2 mb-2">
-                            <i data-lucide="map-pin" class="w-5 h-5"></i>
-                            Via Guglielmo Pepe 46, 30174 VE
-                        </p>
-                        <p>Tel: +39 348 740 1659</p>
-                        <p>Email: autolavaggiosperandioandrea@gmail.com</p>
-
-                    </address>
+                    <h3>Contatti</h3>
+                    <div class="footer-links">
+                        <span>Via Guglielmo Pepe 46, 30174 VE</span>
+                        <span>Tel: +39 348 740 1659</span>
+                        <span>Email: autolavaggiosperandioandrea@gmail.com</span>
+                    </div>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Seguici</h3>
-                    <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/andreasperandiocarwash/" target="_blank" rel="noopener noreferrer" class="text-white text-opacity-80 hover:text-opacity-100 transition-colors">
-                            <i data-lucide="instagram" class="w-6 h-6"></i>
-                            <span class="sr-only">Instagram</span>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=61559960143907" target="_blank" rel="noopener noreferrer" class="text-white text-opacity-80 hover:text-opacity-100 transition-colors">
-                            <i data-lucide="facebook" class="w-6 h-6"></i>
-                            <span class="sr-only">Facebook</span>
-                        </a>
+                    <h3>Seguici</h3>
+                    <div class="footer-links">
+                        <a href="https://www.instagram.com/andreasperandiocarwash/" target="_blank"
+                            rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61559960143907" target="_blank"
+                            rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
                     </div>
                 </div>
             </div>
-            <div class="mt-8">
-                <h3 class="text-xl font-bold mb-4">Posizione</h3>
-                <p class="text-white text-opacity-80 mb-4">Via Guglielmo Pepe 46, 30174 VE</p>
-                <div class="overflow-hidden rounded-lg">
-                    <iframe title="Mappa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.964815306456!2d12.244720977642322!3d45.49065327107426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eb550ba291547%3A0x112a3870d1b807b1!2sAutolavaggio%20Sperandio%20Andrea!5e0!3m2!1sit!2sit!4v1778770076041!5m2!1sit!2sit" width="600" height="450" class="w-full h-64" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-            <div class="mt-8 pt-8 border-t border-white border-opacity-10 text-center text-white text-opacity-60">
-                <p>&copy; <span id="currentYear"></span> Autolavaggio Sperandio Andrea. Tutti i diritti riservati.</p>
+            <div class="footer-bottom">
+                <p>&copy; <span data-current-year></span> Autolavaggio Sperandio Andrea. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-        });
 
-        // Carousel functionality
-        const carouselImages = document.querySelectorAll('.carousel-image');
-        const prevButton = document.getElementById('prevSlide');
-        const nextButton = document.getElementById('nextSlide');
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            carouselImages.forEach((img, i) => {
-                img.style.opacity = i === index ? '1' : '0';
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % carouselImages.length;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + carouselImages.length) % carouselImages.length;
-            showSlide(currentSlide);
-        }
-
-        prevButton.addEventListener('click', prevSlide);
-        nextButton.addEventListener('click', nextSlide);
-
-        // Auto-advance carousel
-        setInterval(nextSlide, 5000);
-
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
+    <script src="static/site.js"></script>
 </body>
+
 </html>

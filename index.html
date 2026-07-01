@@ -1,601 +1,338 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autolavaggio Sperandio Andrea</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/framer-motion@5.0.0/dist/framer-motion.js"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .bg-gradient-to-b {
-            background: linear-gradient(to bottom, #18181b, #000000);
-        }
-        .text-shadow {
-            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
-        }
-        .price-color {
-            color: #ff0000;
-        }
-        .tasto {
-            background-color: #ff0000;
-        }
-        .linea {
-            border-color: #ff0000;
-        }
-        .menu-open {
-            overflow: hidden;
-        }
-        .menu-overlay {
-            background-color: rgba(0, 0, 0, 0.5);
-            transition: opacity 0.3s ease-in-out;
-        }
-        
-        /* Nuove animazioni e effetti */
-        .hero-bg {
-            position: relative;
-            overflow: hidden;
-        }
-        
-
-        
-        .parallax-bg {
-            transform: translateZ(0);
-            will-change: transform;
-        }
-        
-        .floating-animation {
-            animation: floating 6s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .glow-effect {
-            box-shadow: 0 0 20px rgba(253, 56, 77, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .glow-effect:hover {
-            box-shadow: 0 0 30px rgba(253, 56, 77, 0.5);
-            transform: translateY(-2px);
-        }
-        
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-style: preserve-3d;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-8px) rotateX(5deg);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-        
-        .typing-animation {
-            overflow: hidden;
-            border-right: 3px solid #fd384d;
-            white-space: nowrap;
-            margin: 0 auto;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
-        
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #fd384d; }
-        }
-        
-        .gradient-text {
-            background: linear-gradient(45deg, #ffffff, #fd384d, #ffffff);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradient-shift 4s ease infinite;
-        }
-        
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        
-
-        
-        .slide-in-left {
-            animation: slideInLeft 1s ease-out;
-        }
-        
-        .slide-in-right {
-            animation: slideInRight 1s ease-out;
-        }
-        
-        @keyframes slideInLeft {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes slideInRight {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        .bounce-in {
-            animation: bounceIn 1s ease-out;
-        }
-        
-        @keyframes bounceIn {
-            0% {
-                transform: scale(0.3);
-                opacity: 0;
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            70% {
-                transform: scale(0.9);
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-        
-        .stagger-animation {
-            animation-delay: var(--delay);
-        }
-        
-        .morphing-bg {
-            background: linear-gradient(-45deg, #18181b, #000000, #1a1a1a, #000000);
-            background-size: 400% 400%;
-            animation: morphing 15s ease infinite;
-        }
-        
-        @keyframes morphing {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .icon-bounce {
-            animation: iconBounce 2s ease-in-out infinite;
-        }
-        
-        @keyframes iconBounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-        
-        .text-glow {
-            text-shadow: 0 0 10px rgba(253, 56, 77, 0.5);
-        }
-        
-        /* Responsive improvements */
-        @media (max-width: 768px) {
-            .typing-animation {
-                animation: none;
-                border-right: none;
-                white-space: normal;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/site.css">
 </head>
-<body class="min-h-screen morphing-bg text-white overflow-x-hidden">
-    <header class="fixed top-0 w-full z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm border-b border-white border-opacity-10 transition-all duration-300">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
-                <a href="/" class="flex items-center gap-3 slide-in-left">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Lavaggio%20Sofndo%20Bianco-989SB9sXjKH2p5MAyZGX7JsRPZWlrj.png" alt="Sperandio Andrea Car Wash" class="w-auto h-12 floating-animation">
-                    <span class="text-lg font-semibold hidden sm:inline-block gradient-text">
-                        Autolavaggio Sperandio Andrea
-                    </span>
-                </a>
-                <button id="menuButton" class="text-white p-2 z-50 slide-in-right hover:scale-110 transition-transform duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                    <span class="sr-only">Menu</span>
-                </button>
-            </div>
+
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-screen__bg"></div>
+        <img src="static/Logo Lavaggio Sofndo Bianco.png" alt="Logo Autolavaggio Sperandio" class="splash-screen__logo">
+    </div>
+
+    <header class="site-header">
+        <div class="container header__inner">
+            <a class="brand" href="index.html" aria-label="Torna alla home">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Lavaggio%20Sofndo%20Bianco-989SB9sXjKH2p5MAyZGX7JsRPZWlrj.png"
+                    alt="Autolavaggio Sperandio Andrea" class="brand__logo">
+                <span class="brand__text">Autolavaggio Sperandio Andrea</span>
+            </a>
+            <nav class="desktop-nav" aria-label="Principale">
+                <a class="nav-link" href="servizi.html" aria-label="Servizi">Servizi</a>
+                <a class="nav-link" href="chi-siamo.html" aria-label="Chi siamo">Chi Siamo</a>
+                <a class="nav-link" href="photogallery.html" aria-label="Photogallery">Photogallery</a>
+                <a class="nav-link" href="contatti.html" aria-label="Contatti">Contatti e Orari</a>
+            </nav>
+            <a class="btn btn--small btn--primary header__cta" href="prenota.html" aria-label="Prenota">Prenota</a>
+            <button class="nav-toggle" data-menu-button aria-expanded="false" aria-controls="site-menu"
+                aria-label="Apri menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <span class="sr-only">Apri menu</span>
+            </button>
         </div>
+        <div id="site-menu" class="nav-panel" data-menu-panel>
+            <button class="nav-close" type="button" data-menu-close aria-label="Chiudi menu">X</button>
+            <nav class="nav-panel__links" aria-label="Menu mobile">
+                <a href="prenota.html" aria-label="Prenota ora">Prenota ora</a>
+                <a href="servizi.html" aria-label="Servizi">Servizi</a>
+                <a href="chi-siamo.html" aria-label="Chi siamo">Chi siamo</a>
+                <a href="photogallery.html" aria-label="Photogallery">Photogallery</a>
+                <a href="contatti.html" aria-label="Contatti">Contatti e Orari</a>
+            </nav>
+        </div>
+        <div class="nav-overlay" data-menu-overlay></div>
     </header>
 
-    <div id="menuOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300"></div>
+    <main id="main-content">
+        <!-- Hero -->
+        <section class="section section--hero hero">
+            <div class="hero__media" style="background-image: url('static/front296jpg.jpg');"></div>
+            <div class="hero__overlay"></div>
+            <div class="container hero__content">
+                <div class="hero__copy" data-reveal style="position: relative; padding-bottom: 20px;">
+                    <h1 class="headline">Per chi vuole far Risplendere la Propria Auto.</h1>
+                    <p class="lead">
+                        La nostra esperienza trentennale garantisce una pulizia impeccabile di ogni tipo di vettura,
+                        facendola brillare come una volta.
+                    </p>
+                    <div class="hero__actions" style="align-items: center;">
+                        <a class="btn btn--primary" href="prenota.html" aria-label="Prenota la tua cura">Prenota la tua
+                            cura</a>
+                        <a class="btn btn--ghost" href="servizi.html" aria-label="Scopri i servizi">Scopri i servizi</a>
+                    </div>
+        </section>
 
-    <nav id="mobileMenu" class="fixed top-0 right-0 w-[300px] h-full bg-black border-l border-white border-opacity-10 transform translate-x-full transition-transform duration-300 ease-in-out z-50">
-        <div class="flex flex-col pt-16">
-            <a href="/prenota" class="w-full bg-white text-black px-6 py-3 font-medium hover:bg-gray-200 transition-all duration-300 hover:translate-x-2">Prenota Ora</a>
-            <a href="/servizi" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 hover:translate-x-2">Servizi</a>
-            <a href="/chi-siamo" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 hover:translate-x-2">Chi Siamo</a>
-            <a href="/contatti" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 hover:translate-x-2">Contatti</a>
-            <a href="/photogallery.html" class="w-full px-6 py-3 text-white hover:bg-white hover:bg-opacity-10 transition-all duration-300 hover:translate-x-2">Photogallery</a>
-        </div>
-    </nav>
-
-    <section class="relative overflow-hidden pt-16 hero-bg" style="height: 70vh;">
-        <div class="absolute inset-0 z-0">
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Senza%20titolo%20(600%20x%20794%20px)-MeLaDrL2u0cXcWDnLhDN9GNTh7sDfN.png" alt="White Toyota at car wash facility" class="object-cover w-full h-full object-center transition-transform duration-500" style="aspect-ratio: 5/4; object-fit: cover;">
-            <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-60"></div>
-        </div>
-        
-        <div class="container mx-auto px-4 z-10 relative py-16 md:py-20 flex items-center justify-center" style="height: 70vh;">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-glow" data-aos="fade-up" data-aos-duration="1000">
-                    <span class="typing-animation">Da oltre 30 anni ci prendiamo<br>cura delle vostre auto</span>
-                </h1>
-                <p class="text-lg md:text-xl text-white font-medium mb-8 max-w-2xl mx-auto drop-shadow-lg text-shadow" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
-                    La nostra esperienza garantisce una pulizia impeccabile di ogni tipo di vettura,
-                    facendola tornare come nuova
-                </p>
-                <a href="/photogallery.html" class="inline-flex tasto items-center justify-center px-6 py-3 text-base font-medium rounded-md text-white bg-[#fd384d] hover:bg-[#fd384d]/90 transition-all duration-300 shadow-sm glow-effect" data-aos="zoom-in" data-aos-delay="1000">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-2 icon-bounce">
-                        <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
-                        <circle cx="12" cy="13" r="3"></circle>
-                    </svg>
-                    Photogallery
-                </a>
+        <!-- Promo Banner (Sanificazione PMC) -->
+        <div class="promo-banner-full" data-reveal>
+            <div class="container promo-banner-full__inner">
+                <div class="promo-banner-full__text">
+                    <span class="promo-badge">PROMO 25€</span>
+                    <span class="promo-title">Sanificazione Climatizzatore PMC:</span>
+                    <span class="promo-desc">Elimina batteri, muffe e cattivi odori.</span>
+                </div>
+                <div class="promo-banner-full__action">
+                    <a href="servizi.html" class="btn btn--small btn--white btn--pulse">Aggiungi al lavaggio</a>
+                </div>
             </div>
         </div>
-    </section>
 
-    <section id="services" class="py-12">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text" data-aos="fade-down" data-aos-duration="1000">
-                Scopri i Nostri Servizi
-            </h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                <div class="bg-gray-100 rounded-lg shadow-xl p-6 flex flex-col card-hover" data-aos="flip-left" data-aos-delay="200" style="--delay: 0.2s;">
-                    <div class="pb-4">
-                        <h3 class="text-2xl text-black font-bold tracking-tight">Lavaggio Completo</h3>
-                        <p class="text-3xl font-bold price-color mt-2 bounce-in">€25,00</p>
-                    </div>
-                    <ul class="space-y-3 mb-6 flex-1">
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.1s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Lavaggio esterno con spazzole antigraffio
-                        </li>
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.2s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Cera auto-asciugante
-                        </li>
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.3s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Nero gomme
-                        </li>
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.4s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Pulizia battute delle portiere e bagaglaio
-                        </li>
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.5s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Pulizia interna con pistola Tornador® e detergenti professionali
-                        </li>
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.6s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Aspirazione detriti e polvere
-                        </li>
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.7s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Eliminazione ditate e aloni dai vetri
-                        </li>
-                    </ul>
-                    <a href="/prenota" class="w-full bg-black hover:bg-black/90 text-white py-2 px-4 rounded transition-all duration-300 text-center hover:scale-105">
-                        Prenota ora
-                    </a>
+        <!-- Metodo -->
+        <section class="section" id="metodo">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow">Il nostro metodo</p>
+                    <h2 class="section-title">Come trattiamo la tua auto</h2>
+                    <p class="lead">Un processo in 4 fasi per garantire finiture da showroom e protezione duratura.</p>
                 </div>
-                <div class="bg-gray-100 rounded-lg shadow-xl p-6 flex flex-col card-hover" data-aos="flip-left" data-aos-delay="400" style="--delay: 0.4s;">
-                    <div class="pb-4">
-                        <h3 class="text-2xl text-black font-bold tracking-tight">Lavaggio Esterno</h3>
-                        <p class="text-3xl font-bold price-color mt-2 bounce-in">€15,00</p>
-                    </div>
-                    <ul class="space-y-3 mb-6 flex-1">
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.1s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Lavaggio esterno con spazzole antigraffio
-                        </li>
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.2s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Cera auto-asciugante
-                        </li>
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.3s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Nero gomme
-                        </li>
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.4s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Pulizia battute delle portiere
-                        </li>
-                    </ul>
-                    <a href="/prenota" class="w-full bg-black hover:bg-black/90 text-white py-2 px-4 rounded transition-all duration-300 text-center hover:scale-105">
-                        Prenota ora
-                    </a>
-                </div>
-                <div class="bg-gray-100 rounded-lg shadow-xl p-6 flex flex-col card-hover" data-aos="flip-left" data-aos-delay="600" style="--delay: 0.6s;">
-                    <div class="pb-4">
-                        <h3 class="text-2xl text-black font-bold tracking-tight">Lavaggio A Mano</h3>
-                        <p class="text-3xl font-bold price-color mt-2 bounce-in">€30,00</p>
-                    </div>
-                    <ul class="space-y-3 mb-6 flex-1">
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.1s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Lavaggio esterno con guanto in microfibra
-                        </li>
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.2s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Cera auto-asciugante
-                        </li>
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.3s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Pulizia battute delle portiere e bagaglaio
-                        </li>
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.4s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Pulizia interna con pistola Tornador® e detergenti professionali
-                        </li>
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.5s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Aspirazione detriti e polvere
-                        </li>
-                        <li class="flex items-start gap-2 text-gray-600 stagger-animation" style="--delay: 0.6s;">
-                            <span class="text-[#fd384d] mt-1">✓</span>
-                            Eliminazione ditate e aloni dai vetri
-                        </li>
-                    </ul>
-                    <a href="/prenota" class="w-full bg-black hover:bg-black/90 text-white py-2 px-4 rounded transition-all duration-300 text-center hover:scale-105">
-                        Prenota ora
-                    </a>
-                </div>
-            </div>
-
-            <div class="text-center p-8 bg-gray-100 rounded-2xl shadow-xl mb-12" data-aos="zoom-in" data-aos-delay="800">
-                <h3 class="text-2xl font-bold mb-6 text-black">E Molto Altro anche per Furgoni</h3>
-                <a href="/servizi" class="inline-block tasto text-white py-2 px-4 rounded transition-all duration-300 glow-effect">
-                    Scopri Tutti i Nostri Servizi
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-black py-12 border-t border-white border-opacity-10">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-xl font-bold mb-4">Collegamenti Rapidi</h3>
-                    <nav class="flex flex-col space-y-2">
-                        <a href="/prenota" class="text-white text-opacity-80 hover:text-white transition-all duration-300 hover:translate-x-2">Prenota Ora</a>
-                        <a href="/servizi" class="text-white text-opacity-80 hover:text-white transition-all duration-300 hover:translate-x-2">Servizi</a>
-                        <a href="/chi-siamo" class="text-white text-opacity-80 hover:text-white transition-all duration-300 hover:translate-x-2">Chi Siamo</a>
-                        <a href="/contatti" class="text-white text-opacity-80 hover:text-white transition-all duration-300 hover:translate-x-2">Contatti</a>
-                        <a href="/photogallery.html" class="text-white text-opacity-80 hover:text-white transition-all duration-300 hover:translate-x-2">Photogallery</a>
-                    </nav>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="400">
-                    <h3 class="text-xl font-bold mb-4">Contatti</h3>
-                    <address class="not-italic text-white text-opacity-80">
-                        <p class="flex items-center gap-2 mb-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-bounce">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
+                <div class="process-grid" data-stagger="0.08">
+                    <article class="process-card" data-reveal>
+                        <span class="icon-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <path d="M3 3h.01" />
+                                <path d="M7 5h.01" />
+                                <path d="M11 7h.01" />
+                                <path d="M3 7h.01" />
+                                <path d="M7 9h.01" />
+                                <path d="M3 11h.01" />
+                                <rect width="4" height="4" x="15" y="5" rx="1" />
+                                <path d="m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2" />
+                                <path d="m13 14-3-3" />
+                                <path d="m14.5 15.5-3-3" />
                             </svg>
-                            Via Guglielmo Pepe 46, 30174 VE
-                        </p>
-                        <p>Tel: +39 348 740 1659</p>
-                        <p>Email: autolavaggiosperandioandrea@gmail.com</p>
-                    </address>
+                        </span>
+                        <h3>Prelavaggio attivo</h3>
+                        <p>Schiuma tecnica e detergenti neutri per sciogliere lo sporco senza stressare la vernice.</p>
+                    </article>
+                    <article class="process-card" data-reveal>
+                        <span class="icon-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7 2.9 7 2.9s-2.28 6.16-3.29 7.16C2.57 11 2 12.08 2 13.25c0 2.22 1.8 4.05 4 4.05z" />
+                                <path
+                                    d="M12.56 6.6A10.97 10.97 0 0 1 14 8c2.53 2.53 3.5 3.5 3.5 5 0 1.93-1.57 3.5-3.5 3.5a3.5 3.5 0 0 1-1.46-.32" />
+                            </svg>
+                        </span>
+                        <h3>Lavaggio degli esterni</h3>
+                        <p>Con spazzole antigraffio di ultima generazione o a mano, secondo le preferenze</p>
+                    </article>
+                    <article class="process-card" data-reveal>
+                        <span class="icon-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.89 0 4.78 1 6.89 2a1 1 0 0 1 1 1v7z" />
+                            </svg>
+                        </span>
+                        <h3>Asciugatura e applicazione cera</h3>
+                        <p>Per evitare che le gocce d'acqua macchino la carrozzeria appena lavata.</p>
+                    </article>
+                    <article class="process-card" data-reveal>
+                        <span class="icon-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                                <path d="M5 3v4" />
+                                <path d="M19 17v4" />
+                                <path d="M3 5h4" />
+                                <path d="M17 19h4" />
+                            </svg>
+                        </span>
+                        <h3>Detailing interni</h3>
+                        <p>Dettagli con Tornador e prodotti specifici per pelle, tessuti e superfici delicate.</p>
+                    </article>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="600">
-                    <h3 class="text-xl font-bold mb-4">Seguici</h3>
-                    <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/andreasperandiocarwash/" target="_blank" rel="noopener noreferrer" class="text-white text-opacity-80 hover:text-white transition-all duration-300 hover:scale-110">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
-                            <span class="sr-only">Instagram</span>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=61559960143907" target="_blank" rel="noopener noreferrer" class="text-white text-opacity-80 hover:text-white transition-all duration-300 hover:scale-110">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg>
-                            <span class="sr-only">Facebook</span>
-                        </a>
+                <div class="section-cta" style="text-align: center; margin-top: 32px;" data-reveal>
+                    <a class="btn btn--primary" style="padding: 14px 36px; font-size: 1.15rem;" href="prenota.html"
+                        aria-label="Prenota ora">Prenota ora</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signature Detailing (Supercar & Materiali Pregiati) -->
+        <section class="section section--signature-luxury" id="signature-luxury">
+            <div class="container">
+                <div class="section-head" data-reveal style="text-align: center;">
+                    <p class="eyebrow">L'Arte del Detailing</p>
+                    <h2 class="section-title">Dedizione e competenza per supercar e auto rare.</h2>
+                    <p class="lead" style="max-width: 800px; margin: 0 auto; text-align: center;">Collezionisti e
+                        proprietari esigenti
+                        si affidano a noi da anni. Sappiamo come trattare l'eccellenza, preservando e valorizzando i
+                        materiali più delicati e innovativi con precisione maniacale.</p>
+                </div>
+
+                <!-- Blocco 1: Fibra di Carbonio -->
+                <div class="luxury-block luxury-block--carbon">
+                    <div class="luxury-block__text" data-reveal>
+                        <h3>Fibra di Carbonio e Compositi</h3>
+                        <p>La fibra di carbonio è incredibilmente resistente ma il suo trasparente è delicatissimo.
+                            Sappiamo esattamente come trattare questi materiali pregiati, impiegando le tecniche più
+                            sicure e delicate per far risaltare la profondità della trama senza correre alcun rischio.
+                            La nostra esperienza ci permette di lavorare con precisione assoluta
+                            su ogni inserto in composito, proteggendone la bellezza nel tempo.</p>
+                    </div>
+                    <div class="luxury-block__media luxury-grid" data-stagger="0.15">
+                        <div class="luxury-grid__item lux-img-1" data-reveal><img
+                                src="static/photo_2026-07-01_13-11-37%20(2).jpg" alt="Dettaglio carbonio 1"></div>
+                        <div class="luxury-grid__item lux-img-2" data-reveal><img
+                                src="static/photo_2026-07-01_13-11-37.jpg" alt="Dettaglio carbonio 2"></div>
+                        <div class="luxury-grid__item lux-img-3" data-reveal><img
+                                src="static/photo_2026-07-01_13-11-38%20(2).jpg" alt="Dettaglio carbonio 3"></div>
+                        <div class="luxury-grid__item lux-img-4" data-reveal><img
+                                src="static/photo_2026-07-01_13-11-38.jpg" alt="Dettaglio carbonio 4"></div>
+                    </div>
+                </div>
+
+                <div class="fluid-separator" aria-hidden="true"></div>
+
+                <!-- Blocco 2: Pelli Nappa e Superfici Naturali -->
+                <div class="luxury-block luxury-block--leather luxury-block--reverse">
+                    <div class="luxury-block__text" data-reveal>
+                        <h3>Pelli Nappa e Superfici Pregiate</h3>
+                        <p>Ogni pellame naturale richiede un approccio sartoriale e tanta delicatezza. Trattiamo
+                            regolarmente interni in nappa, pelle pieno fiore e materiali delicati. Manteniamo
+                            l'opacità originale e la morbidezza che contraddistingue le pelli più esclusive. Il
+                            risultato è un abitacolo fresco, protetto e accogliente.</p>
+                    </div>
+                    <div class="luxury-block__media luxury-carousel" data-reveal>
+                        <div class="luxury-carousel__inner">
+                            <div class="lux-slide lux-slide--1"><img src="static/photo_2026-07-01_13-11-38%20(5).jpg"
+                                    alt="Dettaglio interni in pelle pregiata 1"></div>
+                            <div class="lux-slide lux-slide--2"><img src="static/photo_2026-07-01_13-11-38%20(4).jpg"
+                                    alt="Pulizia sedili nappa"></div>
+                            <div class="lux-slide lux-slide--3"><img src="static/photo_2026-07-01_13-11-38%20(3).jpg"
+                                    alt="Finitura interni di lusso"></div>
+                            <div class="lux-slide lux-slide--4"><img src="static/photo_2026-07-01_13-56-24.jpg"
+                                    alt="Trattamento pelli premium"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Servizi principali -->
+        <section class="section section--tight" id="servizi">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow">I Nostri Servizi</p>
+                    <h2 class="section-title">Le nostre proposte per risultati impeccabili</h2>
+                    <p class="lead">Scegli il livello di cura ideale e affidati alla nostra attenzione maniacale.</p>
+                </div>
+                <div class="service-grid" data-stagger="0.08">
+                    <article class="service-card" data-reveal>
+                        <div class="service-card__body">
+                            <h3>Lavaggio Completo</h3>
+                            <p class="price">€25,00</p>
+                            <ul>
+                                <li>Lavaggio esterno con spazzole antigraffio</li>
+                                <li>Cera auto-asciugante</li>
+                                <li>Nero gomme</li>
+                                <li>Pulizia battute delle portiere e bagagliaio</li>
+                                <li>Pulizia interna con pistola Tornador® e detergenti professionali</li>
+                                <li>Aspirazione detriti e polvere</li>
+                                <li>Eliminazione ditate e aloni dai vetri</li>
+
+                            </ul>
+                            <a class="btn btn--dark" href="prenota.html" aria-label="Prenota ora">Prenota ora</a>
+                        </div>
+                    </article>
+                    <article class="service-card" data-reveal>
+                        <div class="service-card__body">
+                            <h3>Lavaggio Esterno</h3>
+                            <p class="price">€15,00</p>
+                            <ul>
+                                <li>Lavaggio esterno con spazzole antigraffio</li>
+                                <li>Cera auto-asciugante</li>
+                                <li>Nero gomme</li>
+                                <li>Pulizia battute delle portiere</li>
+                            </ul>
+                            <a class="btn btn--dark" href="prenota.html" aria-label="Prenota ora">Prenota ora</a>
+                        </div>
+                    </article>
+                    <article class="service-card" data-reveal>
+                        <div class="service-card__body">
+                            <h3>Lavaggio a Mano</h3>
+                            <p class="price">€30,00</p>
+                            <ul>
+                                <li>Lavaggio esterno con guanto in microfibra</li>
+                                <li>Cera auto-asciugante</li>
+                                <li>Nero gomme</li>
+                                <li>Pulizia battute delle portiere e bagagliaio</li>
+                                <li>Pulizia interna con pistola Tornador® e detergenti professionali</li>
+                                <li>Aspirazione detriti e polvere</li>
+                                <li>Eliminazione ditate e aloni dai vetri</li>
+                            </ul>
+                            <a class="btn btn--dark" href="prenota.html" aria-label="Prenota ora">Prenota ora</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="section-cta" style="margin-top: 48px; text-align: center;" data-reveal>
+                    <a class="btn btn--ghost" href="servizi.html" aria-label="Scopri tutti i servizi">Scopri tutti i
+                        servizi</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container section section--tight">
+            <div class="footer-grid">
+                <div>
+                    <h3>Collegamenti Rapidi</h3>
+                    <div class="footer-links">
+                        <a href="prenota.html" aria-label="Prenota ora">Prenota Ora</a>
+                        <a href="servizi.html" aria-label="Servizi">Servizi</a>
+                        <a href="chi-siamo.html" aria-label="Chi siamo">Chi Siamo</a>
+                        <a href="contatti.html" aria-label="Contatti">Contatti</a>
+                        <a href="photogallery.html" aria-label="Photogallery">Photogallery</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Contatti</h3>
+                    <div class="footer-links">
+                        <span>Via Guglielmo Pepe 46, 30174 VE</span>
+                        <span>Tel: +39 348 740 1659</span>
+                        <span>Email: autolavaggiosperandioandrea@gmail.com</span>
+                    </div>
+                </div>
+                <div>
+                    <h3>Seguici</h3>
+                    <div class="footer-links">
+                        <a href="https://www.instagram.com/andreasperandiocarwash/" target="_blank"
+                            rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61559960143907" target="_blank"
+                            rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
                     </div>
                 </div>
             </div>
-            <div class="mt-8" data-aos="fade-up" data-aos-delay="700">
-                <h3 class="text-xl font-bold mb-4">Posizione</h3>
-                <p class="text-white text-opacity-80 mb-4">Via Guglielmo Pepe 46, 30174 VE</p>
-                <div class="overflow-hidden rounded-lg">
-                    <iframe title="Mappa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.964815306456!2d12.244720977642322!3d45.49065327107426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eb550ba291547%3A0x112a3870d1b807b1!2sAutolavaggio%20Sperandio%20Andrea!5e0!3m2!1sit!2sit!4v1778770076041!5m2!1sit!2sit" width="600" height="450" class="w-full h-64" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-            <div class="mt-8 pt-8 border-t border-white border-opacity-10 text-center text-white text-opacity-60" data-aos="fade-up" data-aos-delay="800">
-                <p>&copy; <span id="currentYear"></span> Autolavaggio Sperandio Andrea. Tutti i diritti riservati.</p>
+            <div class="footer-bottom">
+                <p>&copy; <span data-current-year></span> Autolavaggio Sperandio Andrea. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        // Inizializza AOS (Animate On Scroll)
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            mirror: false
-        });
-
-        // Mobile menu functionality
-        const menuButton = document.getElementById('menuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
-        let isMenuOpen = false;
-
-        function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-            mobileMenu.style.transform = isMenuOpen ? 'translateX(0)' : 'translateX(100%)';
-            menuOverlay.style.display = isMenuOpen ? 'block' : 'none';
-            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
-        }
-
-        menuButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleMenu();
-        });
-
-        menuOverlay.addEventListener('click', toggleMenu);
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (isMenuOpen && !mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
-                toggleMenu();
-            }
-        });
-
-        // Parallax effect ridotto per l'immagine di sfondo
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroImg = document.querySelector('section img');
-            if (heroImg && scrolled < window.innerHeight) {
-                const speed = scrolled * 0.2; // Ridotto da 0.5 a 0.2
-                heroImg.style.transform = `translateY(${speed}px)`;
-            }
-        });
-
-        // Effetto typing per il titolo principale
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        // Attiva l'effetto typing quando l'elemento è visibile
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const typingElement = entry.target.querySelector('.typing-animation');
-                    if (typingElement && !typingElement.classList.contains('typed')) {
-                        typingElement.classList.add('typed');
-                        const text = typingElement.textContent;
-                        typeWriter(typingElement, text, 50);
-                    }
-                }
-            });
-        });
-
-        const heroSection = document.querySelector('section');
-        if (heroSection) {
-            observer.observe(heroSection);
-        }
-
-        // Animazione staggered per gli elementi delle liste
-        const staggerElements = document.querySelectorAll('.stagger-animation');
-        staggerElements.forEach((element, index) => {
-            element.style.animationDelay = `${index * 0.1}s`;
-            element.classList.add('bounce-in');
-        });
-
-        // Update current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Smooth scrolling per i link interni
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Aggiungi effetti hover dinamici
-        const cards = document.querySelectorAll('.card-hover');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-8px) rotateX(5deg)';
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0) rotateX(0)';
-            });
-        });
-
-        // Effetto particelle di sfondo (opzionale)
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.style.cssText = `
-                position: fixed;
-                width: 2px;
-                height: 2px;
-                background: rgba(253, 56, 77, 0.3);
-                border-radius: 50%;
-                pointer-events: none;
-                z-index: 1;
-                animation: float 6s linear infinite;
-            `;
-            
-            particle.style.left = Math.random() * window.innerWidth + 'px';
-            particle.style.top = window.innerHeight + 'px';
-            
-            document.body.appendChild(particle);
-            
-            setTimeout(() => {
-                particle.remove();
-            }, 6000);
-        }
-
-        // Crea particelle occasionalmente
-        setInterval(createParticle, 3000);
-
-        // CSS per l'animazione delle particelle
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes float {
-                to {
-                    transform: translateY(-100vh) rotate(360deg);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
+    <script src="static/site.js"></script>
 </body>
+
 </html>

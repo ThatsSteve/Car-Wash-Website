@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autolavaggio Sperandio Andrea - Servizi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/site.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header__inner">
+            <a class="brand" href="index.html" aria-label="Torna alla home">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Lavaggio%20Sofndo%20Bianco-989SB9sXjKH2p5MAyZGX7JsRPZWlrj.png" alt="Autolavaggio Sperandio Andrea" class="brand__logo">
+                <span class="brand__text">Autolavaggio Sperandio Andrea</span>
+            </a>
+            <nav class="desktop-nav" aria-label="Principale">
+                <a class="nav-link" href="servizi.html" aria-label="Servizi">Servizi</a>
+                <a class="nav-link" href="chi-siamo.html" aria-label="Chi siamo">Chi Siamo</a>
+                <a class="nav-link" href="photogallery.html" aria-label="Photogallery">Photogallery</a>
+                <a class="nav-link" href="contatti.html" aria-label="Contatti">Contatti</a>
+            </nav>
+            <a class="btn btn--small btn--primary header__cta" href="prenota.html" aria-label="Prenota">Prenota</a>
+            <button class="nav-toggle" data-menu-button aria-expanded="false" aria-controls="site-menu" aria-label="Apri menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <span class="sr-only">Apri menu</span>
+            </button>
+        </div>
+        <div id="site-menu" class="nav-panel" data-menu-panel>
+            <button class="nav-close" type="button" data-menu-close aria-label="Chiudi menu">X</button>
+            <nav class="nav-panel__links" aria-label="Menu mobile">
+                <a href="prenota.html" aria-label="Prenota ora">Prenota ora</a>
+                <a href="servizi.html" aria-label="Servizi">Servizi</a>
+                <a href="chi-siamo.html" aria-label="Chi siamo">Chi siamo</a>
+                <a href="photogallery.html" aria-label="Photogallery">Photogallery</a>
+                <a href="contatti.html" aria-label="Contatti">Contatti</a>
+            </nav>
+        </div>
+        <div class="nav-overlay" data-menu-overlay></div>
+    </header>
+
+    <main id="main-content">
+        <section class="section section--inset">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow">I nostri servizi</p>
+                    <h1 class="headline">Trattamenti su misura per ogni esigenza.</h1>
+                    <p class="lead">Dal lavaggio esterno alla sanificazione, ogni dettaglio e curato con precisione.</p>
+                </div>
+                <div id="servicesGrid" class="service-grid"></div>
+                <div class="section-cta" data-reveal>
+                    <a class="btn btn--primary" href="prenota.html" aria-label="Prenota ora">Prenota ora</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container section section--tight">
+            <div class="footer-grid">
+                <div>
+                    <h3>Collegamenti Rapidi</h3>
+                    <div class="footer-links">
+                        <a href="prenota.html" aria-label="Prenota ora">Prenota Ora</a>
+                        <a href="servizi.html" aria-label="Servizi">Servizi</a>
+                        <a href="chi-siamo.html" aria-label="Chi siamo">Chi Siamo</a>
+                        <a href="contatti.html" aria-label="Contatti">Contatti</a>
+                        <a href="photogallery.html" aria-label="Photogallery">Photogallery</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Contatti</h3>
+                    <div class="footer-links">
+                        <span>Via Guglielmo Pepe 46, 30174 VE</span>
+                        <span>Tel: +39 348 740 1659</span>
+                        <span>Email: autolavaggiosperandioandrea@gmail.com</span>
+                    </div>
+                </div>
+                <div>
+                    <h3>Seguici</h3>
+                    <div class="footer-links">
+                        <a href="https://www.instagram.com/andreasperandiocarwash/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61559960143907" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span data-current-year></span> Autolavaggio Sperandio Andrea. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a class="mobile-cta" href="prenota.html" aria-label="Prenota ora">Prenota ora</a>
+    <script>
+        const services = [
+            {
+                title: "Lavaggio Completo Van/Furgoni",
+                price: "€35,00",
+                image: "static/foto%20(27)-min.jpg",
+                features: [
+                    "Lavaggio esterno con spazzole antigraffio",
+                    "Cera auto-asciugante",
+                    "Nero gomme",
+                    "Pulizia battute delle portiere e vano di carico",
+                    "Pulizia interna con pistola Tornador e detergenti professionali",
+                    "Aspirazione detriti e polvere",
+                    "Eliminazione ditate e aloni dai vetri"
+                ]
+            },
+            {
+                title: "Lavaggio Esterno Van/Furgoni",
+                price: "€25,00",
+                image: "static/foto%20(8)-min.jpg",
+                features: [
+                    "Lavaggio esterno con spazzole antigraffio",
+                    "Cera auto-asciugante",
+                    "Nero gomme",
+                    "Pulizia battute delle portiere"
+                ]
+            },
+            {
+                title: "Sanificazione con PMC",
+                price: "€25,00",
+                image: "static/foto%20(4)-min.jpg",
+                description: "Questo servizio puo essere aggiunto a qualunque tipo di lavaggio.",
+                features: [
+                    "Trattamento ozono certificato",
+                    "Elimina batteri e odori persistenti",
+                    "Agisce sui condotti dell'aria condizionata"
+                ]
+            },
+            {
+                title: "Lavaggio Completo",
+                price: "€25,00",
+                image: "static/foto%20(1)-min.jpg",
+                features: [
+                    "Lavaggio esterno con spazzole antigraffio",
+                    "Cera auto-asciugante",
+                    "Nero gomme",
+                    "Pulizia battute delle portiere e bagagliaio",
+                    "Pulizia interna con Tornador e detergenti professionali",
+                    "Aspirazione detriti e polvere",
+                    "Eliminazione ditate e aloni dai vetri"
+                ]
+            },
+            {
+                title: "Lavaggio Esterno",
+                price: "€15,00",
+                image: "static/foto%20(2)-min.jpg",
+                features: [
+                    "Lavaggio esterno con spazzole antigraffio",
+                    "Cera auto-asciugante",
+                    "Nero gomme",
+                    "Pulizia battute delle portiere"
+                ]
+            },
+            {
+                title: "Lavaggio A Mano",
+                price: "€30,00",
+                image: "static/foto%20(5)-min.jpg",
+                features: [
+                    "Lavaggio esterno con guanto in microfibra",
+                    "Cera auto-asciugante",
+                    "Pulizia battute delle portiere e bagagliaio",
+                    "Pulizia interna con Tornador e detergenti professionali",
+                    "Aspirazione detriti e polvere",
+                    "Eliminazione ditate e aloni dai vetri"
+                ]
+            }
+        ];
+
+        const servicesGrid = document.getElementById("servicesGrid");
+
+        services.forEach((service, index) => {
+            const card = document.createElement("article");
+            card.className = "service-card";
+            card.setAttribute("data-reveal", "");
+            card.style.setProperty("--delay", `${index * 0.05}s`);
+            card.innerHTML = `
+                <div class="service-card__media media-zoom">
+                    <img src="${service.image}" alt="${service.title}">
+                </div>
+                <div class="service-card__body">
+                    <h3>${service.title}</h3>
+                    <p class="price">${service.price}</p>
+                    ${service.description ? `<p class="text-ink-muted">${service.description}</p>` : ""}
+                    <ul>
+                        ${service.features.map((feature) => `<li>${feature}</li>`).join("")}
+                    </ul>
+                    <a class="btn btn--dark" href="prenota.html" aria-label="Prenota ora">Prenota ora</a>
+                </div>
+            `;
+            servicesGrid.appendChild(card);
+        });
+    </script>
+    <script src="static/site.js"></script>
+</body>
+</html>
