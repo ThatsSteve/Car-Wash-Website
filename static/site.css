@@ -2766,11 +2766,14 @@ main {
     .process-grid {
         display: flex;
         overflow-x: auto;
+        overflow-y: hidden;
         scroll-snap-type: x mandatory;
         gap: 20px;
-        padding-bottom: 20px;
+        padding-top: 15px;
+        padding-bottom: 30px;
         -webkit-overflow-scrolling: touch;
         scroll-padding: 20px;
+        touch-action: pan-x;
         /* Allow scroll area to touch edges of screen */
         margin-left: -20px;
         margin-right: -20px;
