@@ -1074,12 +1074,20 @@ main {
 .media-frame {
     border-radius: var(--radius-md);
     overflow: hidden;
+    min-height: 280px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    display: flex;
+    flex-direction: column;
 }
 
-.media-frame iframe {
-    width: 100%;
-    height: 280px;
+.media-frame iframe,
+.media-frame > div {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 280px !important;
     border: 0;
+    flex: 1;
 }
 
 .media-zoom {
